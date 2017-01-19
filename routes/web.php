@@ -21,6 +21,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/send',function(){
-   Mail::to('atharv.bhute18@gmail.com')->send(new Confirmation());
-});
+Route::get('/upload', 'EventController@create')->middleware('auth');
+
+Route::post('/store','EventController@store');

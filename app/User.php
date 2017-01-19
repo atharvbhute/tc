@@ -42,4 +42,8 @@ class User extends Authenticatable
         $this->token = null;
         $this->save();
     }
+
+    public function events(){
+        $this->hasMany('App\Event');
+    }
 }
