@@ -11,16 +11,24 @@
 |
 */
 
+use App\Event;
 use App\Mail\Confirmation;
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $events = Event::all()->where('verified','=',1);
+    return view('welcome')->with('events',$events);
 });
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index');
-
 Route::get('/upload', 'EventController@create')->middleware('auth');
 
 Route::post('/store','EventController@store');
+
+//
+//Route::get('/admin',function(){
+//    return view('admin.loginAdmin');
+//});
+//
+//Route::get('/admin/verification','AdminController@login');
