@@ -25,6 +25,23 @@ Auth::routes();
 Route::get('/upload', 'EventController@create')->middleware('auth');
 
 Route::post('/store','EventController@store');
+//
+//Route::model('events','App\Event');
+//
+//Route::bind('events',function($id,$route){
+//    return App\Event::whereId($id)->first();
+//
+//});
+
+
+Route::get('/{id}','EventController@show')->name('event');
+
+Route::get('/{id}/entryForm',function($id){
+    return view('entryForm')->with('id',$id);
+})->name('entryForm');
+
+Route::post('/entryForm','CompetitorController@store');
+
 
 //
 //Route::get('/admin',function(){

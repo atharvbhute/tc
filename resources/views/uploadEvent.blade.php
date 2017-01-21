@@ -53,7 +53,8 @@
 
                         <div class="form-group col-md-6{{ $errors->has('fees') ? ' has-error' : '' }}">
                             {{ Form::label('title','Fees') }}
-                            {{ Form::number('fees',null,['class' => 'form-control']) }}
+                            <input class="form-control" type="text" name="fees"
+                                   onkeyup="this.value=this.value.replace(/[^\d]/,'')">
                             @if ($errors->has('fees'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('fees') }}</strong>
@@ -65,26 +66,20 @@
                             {{ Form::label('title','Prize') }}
                         </div>
 
-                        <div class="form-group col-md-4{{ $errors->has('first') ? ' has-error' : '' }}">
-                            {{ Form::number('first',null,['placeholder'=>'1st','class' => 'form-control']) }}
-                            @if ($errors->has('first'))
-                                <span class="help-block">
-                                        <strong>{{ $errors->first('first') }}</strong>
-                                    </span>
-                            @endif
+                        <div class="form-group col-md-4">
+                            <input class="form-control" type="text" name="first" placeholder="1st"
+                                   onkeyup="this.value=this.value.replace(/[^\d]/,'')">
                         </div>
 
-                        <div class="form-group col-md-4{{ $errors->has('second') ? ' has-error' : '' }}">
-                            {{ Form::number('second',null,['placeholder'=>'2nd','class' => 'form-control']) }}
-                            @if ($errors->has('second'))
-                                <span class="help-block">
-                                        <strong>{{ $errors->first('second') }}</strong>
-                                    </span>
-                            @endif
+                        <div class="form-group col-md-4">
+                            <input class="form-control" type="text" name="second" placeholder="2nd"
+                                   onkeyup="this.value=this.value.replace(/[^\d]/,'')">
+
                         </div>
 
                         <div class="form-group col-md-4 }}">
-                            {{ Form::number('third',null,['placeholder'=>'3rd','class' => 'form-control']) }}
+                            <input class="form-control" type="text" name="third" placeholder="3rd"
+                                   onkeyup="this.value=this.value.replace(/[^\d]/,'')">
                         </div>
 
                         <div class="form-group col-md-6{{ $errors->has('picture') ? ' has-error' : '' }}">
@@ -104,7 +99,8 @@
 
                         <div class="form-group col-md-6{{ $errors->has('contactNumber') ? ' has-error' : '' }}">
                             {{ Form::label('title','Contact number') }}
-                            {{ Form::text('contactNumber',null,['class' => 'form-control']) }}
+                            <input class="form-control" type="text" name="contactNumber"
+                                   onkeyup="this.value=this.value.replace(/[^\d]/,'')">
                             @if ($errors->has('contactNumber'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('contactNumber') }}</strong>

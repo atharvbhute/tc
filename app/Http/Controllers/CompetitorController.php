@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Event;
-use App\Http\Requests\EventRequest;
-use App\User;
+use App\Competitors;
+use App\Http\Requests\EntryRequest;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
-class EventController extends Controller
+class CompetitorController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +25,8 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('uploadEvent');    }
+        //
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -35,11 +34,11 @@ class EventController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(EventRequest $request)
+    public function store(EntryRequest $request)
     {
-        $id = Auth::id();
-        Event::create(['user_id'=>$id]+$request->all());
-        return redirect('upload')->with('status','your event is going to publish in 59 min, once it\' verified');
+
+        Competitors::create($request->all());
+        return redirect(route('entryForm',['id'=>$request->event_id]))->with('status','Please check your E-mail for entry pass');
     }
 
     /**
@@ -50,9 +49,7 @@ class EventController extends Controller
      */
     public function show($id)
     {
-        $event = Event::all()->where('id','=',$id)->first();
-        return view('event')->with('event',$event);
-
+        //
     }
 
     /**

@@ -22,8 +22,8 @@ class CreateEventsTable extends Migration
             $table->date('date');
             $table->integer('fees');
             $table->text('picture');
-            $table->integer('first');
-            $table->integer('second');
+            $table->integer('first')->nullable();
+            $table->integer('second')->nullable();
             $table->integer('third')->nullable();
             $table->text('description');
             $table->bigInteger('contactNumber');
