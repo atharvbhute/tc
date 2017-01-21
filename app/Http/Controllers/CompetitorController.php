@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Competitors;
+use App\Event;
 use App\Http\Requests\EntryRequest;
+use App\Mail\EntryPass;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class CompetitorController extends Controller
 {
+    public $email;
     /**
      * Display a listing of the resource.
      *
@@ -38,6 +42,30 @@ class CompetitorController extends Controller
     {
 
         Competitors::create($request->all());
+        $event = Event::all()->where('id','=',$request->event_id)->first();
+        $data = [
+            'eventName' => $event->name,
+            'organiser' => $event->organiser,
+            'picture' => $event->picture,
+            'date'=> $event->date,
+            'address'=> $event->address,
+            'fees' => $event->fees,
+            'first' => $event->first,
+            'second'=> $event->second,
+            'third'=> $event->third,
+            'contactNumber'=> $event->contactNumber,
+            'description'=>$event->description,
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'clgName'=>$request->clgName,
+            'contact'=>$request->contactNumber
+        ];
+        $this->email = $request->email;
+
+        Mail::send('emails.entryPass',$data,function ($message){
+            $message->to("$this->email")->subject('your event entry pass');
+        });
+
         return redirect(route('entryForm',['id'=>$request->event_id]))->with('status','Please check your E-mail for entry pass');
     }
 

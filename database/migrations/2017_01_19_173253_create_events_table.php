@@ -16,8 +16,8 @@ class CreateEventsTable extends Migration
         Schema::create('events', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->text('name');
-            $table->text('organiser');
+            $table->string('name');
+            $table->string('organiser');
             $table->text('address');
             $table->date('date');
             $table->integer('fees');

@@ -42,6 +42,9 @@ Route::get('/{id}/entryForm',function($id){
 
 Route::post('/entryForm','CompetitorController@store');
 
+Route::get('/dashboard','EventController@index')->middleware('auth');
+
+
 
 //
 //Route::get('/admin',function(){

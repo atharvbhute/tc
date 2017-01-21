@@ -17,7 +17,10 @@ class EventController extends Controller
      */
     public function index()
     {
-        //
+        $id = Auth::id();
+        return dd($id);
+//        $pevents = Event::all()->where('user_id','=',$id);
+//        return view('dashboard')->with('pevents',$pevents);
     }
 
     /**
