@@ -5,8 +5,11 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="row">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">Entries</div>
+                    <div class="panel panel-default" id="printArea">
+                        <div class="panel-heading">
+                            {{$event->name}}({{$event->organiser}})
+                            <strong class="pull-right">thecompete</strong>
+                        </div>
                         <div class="panel-body">
                         <table class="table table-striped">
                             <thead>
@@ -30,7 +33,7 @@
                         </table>
                             </div>
                         <div class="panel-footer">
-                            <button class="btn btn-primary">Take a print</button>
+                            <button onclick="window.print()" class="btn btn-primary" id="printButton">Take a print</button>
                         </div>
                         </div>
                     </div>

@@ -16,6 +16,7 @@ class DashboardController extends Controller
 
     public function entries($id){
         $entries = Competitors::all()->where('event_id','=',$id);
-        return view('entries')->with('entries',$entries);
+        $event = Event::all()->where('id','=',$id)->first();
+        return view('entries',compact('entries','event'));
     }
 }

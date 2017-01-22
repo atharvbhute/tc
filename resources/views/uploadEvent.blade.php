@@ -1,5 +1,12 @@
 @extends('layouts.app')
-
+@section('script')
+    <script src="https://ucarecdn.com/libs/widget/2.10.2/uploadcare.full.min.js" charset="utf-8"></script>
+    <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+    <script>
+        UPLOADCARE_PUBLIC_KEY = 'f963dfe4bf25e76a2faf';
+    </script>
+    <script>tinymce.init({ selector:'textarea' });</script>
+@endsection
 @section('content')
     <div class="container">
         <div class="row">

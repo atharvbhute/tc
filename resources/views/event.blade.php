@@ -8,7 +8,7 @@
                     <div class="panel-heading">Event</div>
                     <div class="panel-body">
                         <div class="col-md-6">
-                            <img class="img img-responsive" src="{{ $event->picture }}" alt="">
+                            <img class="img img-responsive" src="{{ $event->picture }}-/resize/382x215/" alt="">
                         </div>
                         <div class="col-md-6">
                             <p><Strong>Name: </Strong>{{$event->name}}</p>
