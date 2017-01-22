@@ -43,7 +43,10 @@ Route::get('/{id}/entryForm',function($id){
 
 Route::post('/entryForm','CompetitorController@store');
 
-Route::get('/dashboard','EventController@index')->middleware('auth');
+Route::get('/p_events/{id}','DashboardController@events')->middleware('auth')->name('dash');
+
+Route::get('/{id}/p_events','DashboardController@entries')->middleware('auth')->name('entries');
+
 
 
 
