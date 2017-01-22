@@ -27,7 +27,7 @@ class EntryRequest extends FormRequest
             'name'=>'required',
             'email'=>'required',
             'clgName'=>'required',
-            'contactNumber'=>'required'
+            'contactNumber'=>'required|min:10|max:11'
         ];
     }
 }

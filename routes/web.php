@@ -20,6 +20,7 @@ Route::get('/', function () {
     return view('welcome')->with('events',$events);
 });
 
+
 Auth::routes();
 
 Route::get('/upload', 'EventController@create')->middleware('auth');

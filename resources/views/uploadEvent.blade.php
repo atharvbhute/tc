@@ -14,7 +14,7 @@
                     {!! Form::open(['method' => 'POST' , 'action' => 'EventController@store' ]) !!}
                         <div class="form-group col-md-6{{ $errors->has('name') ? ' has-error' : '' }}">
                             {{ Form::label('title','Event Name') }}
-                            {{ Form::text('name',null,['class' => 'form-control']) }}
+                            {{ Form::text('name',old('name'),['class' => 'form-control']) }}
                             @if ($errors->has('name'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -23,7 +23,7 @@
                         </div>
                         <div class="form-group col-md-6{{ $errors->has('organiser') ? ' has-error' : '' }}">
                             {{ Form::label('title','Organiser') }}
-                            {{ Form::text('organiser',null,['class' => 'form-control']) }}
+                            {{ Form::text('organiser',old('organiser'),['class' => 'form-control']) }}
                             @if ($errors->has('organiser'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('organiser') }}</strong>
@@ -33,7 +33,7 @@
 
                         <div class="form-group col-md-12{{ $errors->has('address') ? ' has-error' : '' }}">
                             {{ Form::label('title','Address') }}
-                            {{ Form::text('address',null,['class' => 'form-control']) }}
+                            {{ Form::text('address',old('address'),['class' => 'form-control']) }}
                             @if ($errors->has('address'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('address') }}</strong>
@@ -43,7 +43,7 @@
 
                         <div class="form-group col-md-6{{ $errors->has('date') ? ' has-error' : '' }}">
                             {{ Form::label('title','Date') }}
-                            {{ Form::date('date',null,['class' => 'form-control']) }}
+                            {{ Form::date('date',old('date'),['class' => 'form-control']) }}
                             @if ($errors->has('date'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('date') }}</strong>
@@ -53,7 +53,7 @@
 
                         <div class="form-group col-md-6{{ $errors->has('fees') ? ' has-error' : '' }}">
                             {{ Form::label('title','Fees') }}
-                            <input class="form-control" type="text" name="fees"
+                            <input class="form-control" type="text" name="fees" value="{{old('fees')}}"
                                    onkeyup="this.value=this.value.replace(/[^\d]/,'')">
                             @if ($errors->has('fees'))
                                 <span class="help-block">
@@ -67,18 +67,18 @@
                         </div>
 
                         <div class="form-group col-md-4">
-                            <input class="form-control" type="text" name="first" placeholder="1st"
+                            <input class="form-control" type="text" name="first" placeholder="1st" value="{{old('first')}}"
                                    onkeyup="this.value=this.value.replace(/[^\d]/,'')">
                         </div>
 
                         <div class="form-group col-md-4">
-                            <input class="form-control" type="text" name="second" placeholder="2nd"
+                            <input class="form-control" type="text" name="second" placeholder="2nd" value="{{old('second')}}"
                                    onkeyup="this.value=this.value.replace(/[^\d]/,'')">
 
                         </div>
 
                         <div class="form-group col-md-4 }}">
-                            <input class="form-control" type="text" name="third" placeholder="3rd"
+                            <input class="form-control" type="text" name="third" placeholder="3rd" value="{{old('third')}}"
                                    onkeyup="this.value=this.value.replace(/[^\d]/,'')">
                         </div>
 
@@ -99,7 +99,7 @@
 
                         <div class="form-group col-md-6{{ $errors->has('contactNumber') ? ' has-error' : '' }}">
                             {{ Form::label('title','Contact number') }}
-                            <input class="form-control" type="text" name="contactNumber"
+                            <input class="form-control" type="text" name="contactNumber" value="{{old('contactNumber')}}"
                                    onkeyup="this.value=this.value.replace(/[^\d]/,'')">
                             @if ($errors->has('contactNumber'))
                                 <span class="help-block">
@@ -110,7 +110,7 @@
 
                         <div class="form-group col-md-12{{ $errors->has('description') ? ' has-error' : '' }}">
                             {{ Form::label('title','Description (please fill description with details)') }}
-                            {{ Form::textarea('description',null,['placeholder'=>'please fill description with details','class' => 'form-control']) }}
+                            {{ Form::textarea('description',old('description'),['placeholder'=>'please fill description with details','class' => 'form-control']) }}
                             @if ($errors->has('description'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('description') }}</strong>

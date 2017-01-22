@@ -22,9 +22,9 @@ class CreateEventsTable extends Migration
             $table->date('date');
             $table->integer('fees');
             $table->text('picture');
-            $table->integer('first')->nullable();
-            $table->integer('second')->nullable();
-            $table->integer('third')->nullable();
+            $table->string('first')->default(0);
+            $table->string('second')->default(0);
+            $table->string('third')->dafault(0);
             $table->text('description');
             $table->bigInteger('contactNumber');
             $table->boolean('verified')->default(false);

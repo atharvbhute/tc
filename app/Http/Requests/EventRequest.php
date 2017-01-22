@@ -31,7 +31,7 @@ class EventRequest extends FormRequest
             'fees' => 'required',
             'picture' => 'required',
             'description' => 'required',
-            'contactNumber' => 'required',
+            'contactNumber' => 'required|min:10|max:11',
         ];
     }
 }

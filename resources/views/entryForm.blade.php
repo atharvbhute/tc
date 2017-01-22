@@ -14,7 +14,7 @@
                         {!! Form::open(['method' => 'POST' , 'action' => 'CompetitorController@store' ]) !!}
                         <div class="form-group col-md-6{{ $errors->has('name') ? ' has-error' : '' }}">
                             {{ Form::label('title','Name') }}
-                            {{ Form::text('name',null,['class' => 'form-control']) }}
+                            {{ Form::text('name',old('name'),['class' => 'form-control']) }}
                             @if ($errors->has('name'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -23,7 +23,7 @@
                         </div>
                         <div class="form-group col-md-6{{ $errors->has('email') ? ' has-error' : '' }}">
                             {{ Form::label('title','E-mail') }}
-                            {{ Form::text('email',null,['class' => 'form-control']) }}
+                            {{ Form::text('email',old('email'),['class' => 'form-control']) }}
                             @if ($errors->has('email'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -33,7 +33,7 @@
 
                         <div class="form-group col-md-12{{ $errors->has('clgName') ? ' has-error' : '' }}">
                             {{ Form::label('title','College Name') }}
-                            {{ Form::text('clgName',null,['class' => 'form-control']) }}
+                            {{ Form::text('clgName',old('clgName'),['class' => 'form-control']) }}
                             @if ($errors->has('clgName'))
                                 <span class="help-block">
                                         <strong>{{ $errors->first('clgName') }}</strong>
@@ -44,7 +44,7 @@
 
                         <div class="form-group col-md-6{{ $errors->has('contactNumber') ? ' has-error' : '' }}">
                             {{ Form::label('title','Contact Number') }}
-                            <input class="form-control" type="text" name="contactNumber"
+                            <input class="form-control" type="text" name="contactNumber" vlaue="{{ old('contactNumber') }}"
                                    onkeyup="this.value=this.value.replace(/[^\d]/,'')">
                             @if ($errors->has('contactNumber'))
                                 <span class="help-block">

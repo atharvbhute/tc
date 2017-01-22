@@ -20,7 +20,7 @@
                             <p><strong>Prizes: </strong></p>
                             @endif
                             @if(!empty($event->first))
-                                <p class="col-sm-4"><strong>2st: </strong>{{$event->first}}</p>
+                                <p class="col-sm-4"><strong>1st: </strong>{{$event->first}}</p>
                             @endif
                             @if(!empty($event->second))
                                 <p class="col-sm-4"><strong>2st: </strong>{{$event->second}}</p>

@@ -66,7 +66,7 @@ class CompetitorController extends Controller
             $message->to("$this->email")->subject('your event entry pass');
         });
 
-        return redirect(route('entryForm',['id'=>$request->event_id]))->with('status','Please check your E-mail for entry pass');
+        return redirect(route('entryForm',['id'=>$request->event_id]))->with('status','We sent and an event entry pass to your email , its very basic :P');
     }
 
     /**
