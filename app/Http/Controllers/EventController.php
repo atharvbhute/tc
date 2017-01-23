@@ -15,6 +15,8 @@ class EventController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+
     public function index()
     {
 
@@ -86,6 +88,13 @@ class EventController extends Controller
      */
     public function destroy($id)
     {
-        //
+
+        $currentDate = date('y-m-d');
+        $event = Event::find($id)->where('date','<=',$currentDate)->delete();
+
+        if($event){
+            return back()->with('status','Event is deleted successfully');
+        }
+        return back()->with('status','sorry you can\'t delete event right now for user level purposes, you can delete your event once its date is gone');
     }
 }

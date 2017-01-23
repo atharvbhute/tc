@@ -7,6 +7,9 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">Event</div>
                     <div class="panel-body">
+                        <div class="col-md-12">
+
+
                         <div class="col-md-6">
                             <img class="img img-responsive" src="{{ $event->picture }}-/resize/382x215/" alt="">
                         </div>
@@ -29,9 +32,12 @@
                             <p class="col-sm-4"><strong>3st: </strong>{{$event->third}}</p>
                             @endif
                         </div>
-                        <br>
-                        <hr>
+                        </div>
+
+                        <div class="col-md-12">
+                            <hr>
                         <p><strong>Description (please read description very carefully): </strong>{!! $event->description !!}</p>
+                        </div>
                         <br>
                         <hr>
                         <a href="{{route('entryForm',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">Go To An Event</button></a>

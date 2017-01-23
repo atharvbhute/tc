@@ -16,6 +16,12 @@ use App\Mail\Confirmation;
 
 Route::get('/', function () {
 
+    $currentDate = date('y-m-d');
+    $expiredEvents = Event::where('date','<=',$currentDate)->get();
+    foreach ($expiredEvents as $expiredEvent){
+        $expiredEvent->verified=0;
+        $expiredEvent->save();
+    }
     $events = Event::all()->where('verified','=',1);
     return view('welcome')->with('events',$events);
 });
@@ -48,7 +54,12 @@ Route::get('/p_events/{id}','DashboardController@events')->middleware('auth')->n
 Route::get('/{id}/p_events','DashboardController@entries')->middleware('auth')->name('entries');
 
 
+Route::get('/todaay',function(){
+    $date = date('y-m-d');
+    return $date;
+});
 
+Route::get('/{id}/delete','EventController@destroy')->name('deleteEvent');
 
 //
 //Route::get('/admin',function(){

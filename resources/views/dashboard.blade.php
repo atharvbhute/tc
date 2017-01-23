@@ -5,8 +5,10 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="row">
+                    @include('partials.flash')
 
-                    @foreach($events as $event)
+
+                @foreach($events as $event)
                         <a href="{{route('entries',['id'=>$event->id])}}">
                             <div class="col-sm-6 col-xs-12 col-md-4">
                                 <div class="thumbnail">
@@ -17,6 +19,8 @@
                                         <p><Strong>Date: </Strong>{{$event->date}}</p>
                                         <p><Strong>Address: </Strong>{{$event->address}}</p>
                                     </div>
+                                    <hr>
+                                        <a href="{{route('deleteEvent',['id'=>$event->id])}}"><button class="btn btn-danger">Delete</button></a>
                                 </div>
                             </div>
                         </a>
