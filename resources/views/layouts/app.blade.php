@@ -68,7 +68,7 @@
 
                                 <li>
                                     <a href="{{ route('contact') }}">
-                                        Contact
+                                        Contact Us
                                     </a>
 
                                 </li>

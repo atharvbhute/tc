@@ -19,6 +19,11 @@
                                         <p><Strong>Date: </Strong>{{$event->date}}</p>
                                         <p><Strong>Address: </Strong>{{$event->address}}</p>
                                     </div>
+                                    @if($event->verified)
+                                        <p class="bg-success">verified</p>
+                                    @else
+                                        <p class="bg-danger">unverified( it will verify once it check by us) or it's outdated </p>
+                                    @endif
                                     <hr>
                                         <a href="{{route('deleteEvent',['id'=>$event->id])}}"><button class="btn btn-danger">Delete</button></a>
                                 </div>

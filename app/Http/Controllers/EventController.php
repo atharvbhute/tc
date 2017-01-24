@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Competitors;
 use App\Event;
 use App\Http\Requests\EventRequest;
 use App\User;
@@ -90,6 +91,12 @@ class EventController extends Controller
     {
 
         $currentDate = date('y-m-d');
+
+        if ($eventGetting = Event::find($id)->where('date','<=',$currentDate)->get()->first()){
+            $delId = $eventGetting->id;
+            Competitors::where('event_id','=',$delId)->delete();
+        }
+
         $event = Event::find($id)->where('date','<=',$currentDate)->delete();
 
         if($event){
