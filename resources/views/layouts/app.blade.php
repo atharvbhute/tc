@@ -8,12 +8,13 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title><strong>thecompete</strong>(<small>prototype</small>)</title>
+    <title>thecompete(prototype)</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
+    @yield('script')
     <script>
         window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
@@ -43,13 +44,36 @@
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
                     <!-- Left Side Of Navbar -->
                     <ul class="nav navbar-nav">
-                        &nbsp;
+                        &nbsp;<li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                About<span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+
+                                <li>
+                                    <a href="#">
+                                        About
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a href="{{ url('#') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Contact
+                                    </a>
+
+                                </li>
+                            </ul>
+                        </li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
 
                         <li><a href="{{ url('/upload') }}">Upload Event</a></li>
+
 
                         <!-- Authentication Links -->
                         @if (Auth::guest())
