@@ -63,9 +63,15 @@ Route::get('/{id}/delete','EventController@destroy')->name('deleteEvent');
 
 Route::post('/contactform','ContactController@store')->name('contact');
 Route::get('/contact','ContactController@index')->name('contact');
-//
-//Route::get('/admin',function(){
-//    return view('admin.loginAdmin');
-//});
-//
-//Route::get('/admin/verification','AdminController@login');
+
+// Admin routes
+
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/admin/panel','AdminController@index')->name('adminHome');
+    Route::get('/admin/panel/verified','AdminController@verified')->name('verified');
+    Route::get('/admin/panel/unverified','AdminController@unverified')->name('unverified');
+    Route::get('/admin/panel/{id}/verify','AdminController@verify')->name('verify');
+    Route::get('/admin/panel/{id}/unverify','AdminController@unverify')->name('unverify');
+    Route::get('/admin/panel/{id}/event','AdminController@event')->name('admin_event');
+
+});
