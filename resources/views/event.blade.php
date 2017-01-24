@@ -39,7 +39,10 @@
                             <p ><strong>Description (please read description very carefully): </strong>{!! $event->description !!}</p>
 
                             </div>
-                        <br>
+                        <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
+                            <hr>
+                            <p class="bg-info"><strong>Note: </strong>you have to pay event fees at the time when you are going to an event</p>
+                        </div>
                         <hr>
                         <a href="{{route('entryForm',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">Go To An Event</button></a>
 

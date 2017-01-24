@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="panel panel-default" id="printArea">
                         <div class="panel-heading">
-                            {{$event->name}}({{$event->organiser}})
+                            {{$event->name}} ( {{$event->organiser}} )
                             <strong class="pull-right">thecompete</strong>
                         </div>
                         <div class="panel-body">

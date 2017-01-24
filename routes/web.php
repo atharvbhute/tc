@@ -41,7 +41,7 @@ Route::post('/store','EventController@store');
 //});
 
 
-Route::get('/{id}','EventController@show')->name('event');
+Route::get('/{id}/event','EventController@show')->name('event');
 
 Route::get('/{id}/entryForm',function($id){
     return view('entryForm')->with('id',$id);
@@ -61,6 +61,8 @@ Route::get('/todaay',function(){
 
 Route::get('/{id}/delete','EventController@destroy')->name('deleteEvent');
 
+Route::post('/contactform','ContactController@store')->name('contact');
+Route::get('/contact','ContactController@index')->name('contact');
 //
 //Route::get('/admin',function(){
 //    return view('admin.loginAdmin');

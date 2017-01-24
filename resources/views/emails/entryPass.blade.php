@@ -48,6 +48,10 @@
                         <p><strong>College Name: </strong>{{$clgName}}</p>
                         <p><strong>Contact: </strong>{{$contactNumber}}</p>
 
+                    <br>
+                    <hr>
+                    <p><strong>Note: </strong>you have to pay when you are going to an event</p>
+
 
                 </div>
 
