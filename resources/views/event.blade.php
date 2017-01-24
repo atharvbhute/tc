@@ -34,15 +34,15 @@
                         </div>
                         </div>
 
-                        <div class="col-md-12">
+                            <div class="col-sm-12 col-md-12">
                             <hr>
-                        <p><strong>Description (please read description very carefully): </strong>{!! $event->description !!}</p>
-                        </div>
+                            <p ><strong>Description (please read description very carefully): </strong>{!! $event->description !!}</p>
+
+                            </div>
                         <br>
                         <hr>
                         <a href="{{route('entryForm',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">Go To An Event</button></a>
 
-                    </div>
                 </div>
             </div>
         </div>
