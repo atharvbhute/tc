@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Contact;
 use App\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -57,6 +58,17 @@ class AdminController extends Controller
 
     }
 
+    public function deleteMessage($id){
+        if(Contact::findOrFail($id)->delete()){
+            return redirect(route('contactMessages'))->with('status','message has been deleted');
+        }else{
+            return redirect(route('contactMessages'))->with('status','message is not deleted yet');
+        }
+    }
+
+    public function sendReply(Request $request){
+        return dd($request->all());
+    }
 
 
 }

@@ -11,6 +11,7 @@
 |
 */
 
+use App\Contact;
 use App\Event;
 use App\Mail\Confirmation;
 
@@ -74,5 +75,19 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/panel/{id}/unverify','AdminController@unverify')->name('unverify');
     Route::get('/admin/panel/{id}/event','AdminController@event')->name('admin_event');
     Route::get('/admin/panel/{id}/delete','AdminController@deleteEvent')->name('delete_event');
+    Route::get('/admin/panel/contactMessages',function(){
+        $contactMessages = Contact::all();
+        return view('admin.contactMessages')->with('contactMessages',$contactMessages);
+    })->name('contactMessages');
+    Route::get('/admin/panel/{id}/message/delete','AdminController@deleteMessage')->name('delete_message');
+    Route::get('/admin/panel/{id}/message/reply',function($id){
+
+        $message = Contact::all()->where('id','=',$id)->first();
+
+        return view('admin.messageReply')->with('message',$message);
+    })->name('reply_message');
+
+    Route::post('/admin/panel/message/reply/to','AdminController@sendReply');
+
 
 });

@@ -84,7 +84,7 @@
                             </li>
 
                             <li>
-                                <a href="#">
+                                <a href="{{route('contactMessages')}}">
                                     contact messages
                                 </a>
                             </li>
