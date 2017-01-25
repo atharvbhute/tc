@@ -73,5 +73,6 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/panel/{id}/verify','AdminController@verify')->name('verify');
     Route::get('/admin/panel/{id}/unverify','AdminController@unverify')->name('unverify');
     Route::get('/admin/panel/{id}/event','AdminController@event')->name('admin_event');
+    Route::get('/admin/panel/{id}/delete','AdminController@deleteEvent')->name('delete_event');
 
 });

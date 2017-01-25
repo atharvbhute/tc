@@ -44,8 +44,13 @@
                             <p class="bg-info"><strong>Note: </strong>you have to pay event fees at the time when you are going to an event</p>
                         </div>
                         <hr>
-                        <a href="{{route('verify',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">verifiy</button></a>
-                        <a href="{{route('unverify',['id'=>$event->id])}}"><button class="btn btn-primary pull-lefy">unverify</button></a>
+                        <div class="col-md-4">
+                            <a href="{{route('verify',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">verifiy</button></a>
+                        </div>
+                        <div class="col-md-4">
+                            <a href="{{route('unverify',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">unverify</button></a>
+                        </div>
+                        <a href="{{route('delete_event',['id'=>$event->id])}}"><button class="btn btn-danger">delete</button></a>
 
                     </div>
             </div>

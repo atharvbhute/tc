@@ -24,7 +24,7 @@ class AdminController extends Controller
     }
 
     public function verify($id){
-        $event = Event::find($id);
+        $event = Event::findOrFail($id);
         $event->verified = 1;
         if($event->save()){
             return redirect(route('verified'))->with('status','event is successfully verified');
@@ -33,19 +33,28 @@ class AdminController extends Controller
         }
     }
 
-//    public function unverify($id){
-//        $event = Event::findOrFail($id)->first();
-//        $event->verified = 0;
-//        if($event->save()){
-//            return redirect(route('verified'))->with('status','event is successfully unverified');
-//        }else{
-//            return redirect(route('verified'))->with('status','event is successfully verified');
-//        }
-//    }
+    public function unverify($id){
+        $event = Event::findOrFail($id);
+        $event->verified = 0;
+        if($event->save()){
+            return redirect(route('verified'))->with('status','event is successfully unverified');
+        }else{
+            return redirect(route('verified'))->with('status','event is successfully verified');
+        }
+    }
 
     public function event($id){
-        $event = Event::findOrFail($id)->first();
+        $event = Event::all()->where('id','=',$id)->first();
         return view('admin.event')->with('event',$event);
+    }
+
+    public function deleteEvent($id){
+        if(Event::findOrFail($id)->delete()){
+            return redirect(route('verified'))->with('status','event is successfully deleted');
+        }else{
+            return redirect(route('verified'))->with('status','event is not yet deleted');
+        }
+
     }
 
 
