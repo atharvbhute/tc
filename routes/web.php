@@ -64,6 +64,9 @@ Route::get('/{id}/delete','EventController@destroy')->name('deleteEvent');
 
 Route::post('/contactform','ContactController@store')->name('contact');
 Route::get('/contact','ContactController@index')->name('contact');
+Route::get('/-/about',function(){
+    return view('about');
+})->name('about');
 
 // Admin routes
 

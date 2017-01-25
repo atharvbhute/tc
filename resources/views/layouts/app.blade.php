@@ -61,7 +61,7 @@
                             <ul class="dropdown-menu" role="menu">
 
                                 <li>
-                                    <a href="#">
+                                    <a href="{{route('about')}}">
                                         About
                                     </a>
                                 </li>
@@ -120,6 +120,7 @@
         </nav>
 
         @yield('content')
+
     </div>
 
     <!-- Scripts -->
