@@ -15,7 +15,7 @@
                                 <div class="form-group">
                                     {!! Form::textarea('replyMessage',null,['class'=>'form-control']) !!}
                                 </div>
-                                {!! Form::hidden('emailAddress',$message->email) !!}
+                                {!! Form::hidden('email',$message->email) !!}
 
                             </div>
 

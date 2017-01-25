@@ -4,11 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Contact;
 use App\Event;
+use App\Http\Requests\ReplyRequest;
+use App\Mail\ReplyMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class AdminController extends Controller
 {
+    public $mail;
+
+
     public function index(){
         $events = Event::all();
         return view('admin.admin-home')->with('events',$events);
@@ -66,8 +72,21 @@ class AdminController extends Controller
         }
     }
 
-    public function sendReply(Request $request){
-        return dd($request->all());
+    /**
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function sendReply(ReplyRequest $request){
+        $data = ['replyMessage'=>"$request->replyMessage"];
+        $this->mail = $request->email;
+
+        Mail::send('emails.replyMail',$data,function($message){
+            $message->to("$this->mail")->subject('Reply From the compete');
+        });
+        $contact = Contact::all()->where('email','=',$request->email)->first();
+        $contact->replied = true;
+        $contact->save();
+        return redirect(route('contactMessages'))->with('status','you just replied to '.$request->email);
     }
 
 
