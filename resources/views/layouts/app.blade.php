@@ -123,6 +123,13 @@
 
     </div>
 
+    <footer class="footer bg-primary">
+        <div class="container">
+            <strong>A Atharv Bhute production <br>
+                thecompete © 2017</strong>
+        </div>
+    </footer>
+
     <!-- Scripts -->
     <script src="/js/app.js"></script>
 </body>
