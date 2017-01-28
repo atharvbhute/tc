@@ -40,7 +40,6 @@ class CompetitorController extends Controller
      */
     public function store(EntryRequest $request)
     {
-
         Competitors::create($request->all());
         $event = Event::all()->where('id','=',$request->event_id)->first();
         $data = [

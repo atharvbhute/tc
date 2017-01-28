@@ -4,13 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Competitors;
 use App\Event;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class DashboardController extends Controller
 {
-    public function events($id){
-        $events = Event::all()->where('user_id','=',$id);
+    public function events(){
+        $user = User::findOrFail(Auth::id());
+        $events = $user->events;
         return view('dashboard')->with('events',$events);
     }
 

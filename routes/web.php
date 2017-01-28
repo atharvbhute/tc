@@ -50,15 +50,9 @@ Route::get('/{id}/entryForm',function($id){
 
 Route::post('/entryForm','CompetitorController@store');
 
-Route::get('/p_events/{id}','DashboardController@events')->middleware('auth')->name('dash');
+Route::get('/p_events/dashboard/events/}','DashboardController@events')->middleware('auth')->name('dash');
 
 Route::get('/{id}/p_events','DashboardController@entries')->middleware('auth')->name('entries');
-
-
-Route::get('/todaay',function(){
-    $date = date('y-m-d');
-    return $date;
-});
 
 Route::get('/{id}/delete','EventController@destroy')->name('deleteEvent');
 

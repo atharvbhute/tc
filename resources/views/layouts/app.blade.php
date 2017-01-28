@@ -95,7 +95,7 @@
                                 <ul class="dropdown-menu" role="menu">
 
                                     <li>
-                                        <a href="{{ route('dash',['id'=>Auth::user()->id]) }}">
+                                        <a href="{{ route('dash') }}">
                                             Dashboard
                                         </a>
                                     </li>

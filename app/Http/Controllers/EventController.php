@@ -40,8 +40,8 @@ class EventController extends Controller
      */
     public function store(EventRequest $request)
     {
-        $id = Auth::id();
-        Event::create(['user_id'=>$id]+$request->all());
+        $user = User::findorFail(Auth::id());
+        $user->events()->save(new Event($request->all()));
         return redirect('upload')->with('status','your event is going to publish in 59 min, once it\' verified');
     }
 
