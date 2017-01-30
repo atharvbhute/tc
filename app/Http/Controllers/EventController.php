@@ -41,7 +41,7 @@ class EventController extends Controller
     {
         $user = User::findorFail(Auth::id());
         $user->events()->save(new Event($request->all()));
-        return redirect('upload')->with('status','your event is going to publish in 59 min, once it\' verified');
+        return redirect('upload')->with('status','your event is going to publish soon, once it\' verified');
     }
 
     /**
