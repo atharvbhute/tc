@@ -116,7 +116,10 @@
                         </div>
 
                         <div class="form-group col-md-12{{ $errors->has('description') ? ' has-error' : '' }}">
-                            {{ Form::label('title','Description (please fill description with details)') }}
+                            <div class="bg-info">
+                                {{ Form::label('title','Description (please fill description with details , so that your visitors can understand your event in detail)') }}
+
+                            </div>
                             {{ Form::textarea('description',old('description'),['placeholder'=>'please fill description with details','class' => 'form-control']) }}
                             @if ($errors->has('description'))
                                 <span class="help-block">

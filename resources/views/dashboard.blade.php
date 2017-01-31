@@ -6,8 +6,6 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="row">
                     @include('partials.flash')
-
-
                 @foreach($events as $event)
                         <a href="{{route('entries',['id'=>$event->id])}}">
                             <div class="col-sm-6 col-xs-12 col-md-4">

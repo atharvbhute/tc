@@ -31,12 +31,14 @@
                             @if(!empty($event->third))
                             <p class="col-sm-4"><strong>3st: </strong>{{$event->third}}</p>
                             @endif
+                            <p class="col-sm-12"><strong>Contact: </strong>{{$event->contactNumber}}</p>
+
                         </div>
                         </div>
 
                             <div class="col-sm-12 col-md-12">
                             <hr>
-                            <p ><strong>Description (please read description very carefully): </strong>{!! $event->description !!}</p>
+                            <p ><strong class="bg-info">Description (please read description very carefully): </strong>{!! $event->description !!}</p>
 
                             </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
