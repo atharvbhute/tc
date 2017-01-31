@@ -16,6 +16,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Email</th>
+                                    <th>confirm</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -23,6 +24,7 @@
                                     <tr>
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
+                                        <td>{{ $user->confirm }}</td>
                                     </tr>
                                 @endforeach
                                 </tbody>
