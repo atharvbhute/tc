@@ -17,6 +17,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>confirm</th>
+                                    <th>created at</th>
                                 </tr>
                                 </thead>
                                 <tbody>
@@ -25,6 +26,8 @@
                                         <td>{{ $user->name }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>{{ $user->confirm }}</td>
+                                        <td>{{ $user->created_at }}</td>
+
                                     </tr>
                                 @endforeach
                                 </tbody>
