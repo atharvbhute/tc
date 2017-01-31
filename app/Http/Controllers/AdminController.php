@@ -6,6 +6,7 @@ use App\Contact;
 use App\Event;
 use App\Http\Requests\ReplyRequest;
 use App\Mail\ReplyMail;
+use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
@@ -70,6 +71,11 @@ class AdminController extends Controller
         }else{
             return redirect(route('contactMessages'))->with('status','message is not deleted yet');
         }
+    }
+
+    public function users(){
+        $users = User::all();
+        return view('admin.users')->with('users',$users);
     }
 
     /**

@@ -65,6 +65,7 @@ Route::get('/-/about',function(){
 // Admin routes
 
 Route::group(['middleware' => 'admin'], function () {
+    Route::get('/admin/panel/users','AdminController@users')->name('users');
     Route::get('/admin/panel','AdminController@index')->name('adminHome');
     Route::get('/admin/panel/verified','AdminController@verified')->name('verified');
     Route::get('/admin/panel/unverified','AdminController@unverified')->name('unverified');

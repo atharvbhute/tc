@@ -64,6 +64,11 @@
                         @if (Auth::guest())
                             <li><a href="{{ url('/login') }}">Login</a></li>
                         @else
+                            <li>
+                                <a href="{{route('users')}}">
+                                    Users
+                                </a>
+                            </li>
 
                             <li>
                                 <a href="{{route('verified')}}">
