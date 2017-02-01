@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+@section('title')
+    dashboard | thecompete
+@endsection
 
     <div class="container">
         <div class="row">

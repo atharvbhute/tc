@@ -1,4 +1,8 @@
 @extends('layouts.app')
+
+@section('title')
+    upload event | thecompete
+@endsection
 @section('script')
     <script src="https://ucarecdn.com/libs/widget/2.10.2/uploadcare.full.min.js" charset="utf-8"></script>
     <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>

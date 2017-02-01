@@ -1,4 +1,8 @@
 @extends('layouts.app')
+
+@section('title')
+    contact | thecompete
+@endsection
 @section('content')
 
     <div class="container">

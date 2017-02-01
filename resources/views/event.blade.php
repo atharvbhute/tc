@@ -1,5 +1,28 @@
 @extends('layouts.app')
 
+@section('script')
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#shareBtn').click(function(e){
+                e.preventDefault();
+                FB.ui(
+                    {
+                        method: 'feed',
+                        name: '{{$event->name}}',
+                        link: 'http://thecompete.com/{{$event->id}}/event',
+                        picture: '{{$event->picture}}',
+                        description: "{!! $event->description !!}",
+                        message: "participate in this event"
+                    });
+            });
+        });
+    </script>
+@endsection
+
+@section('title')
+    thecompete | {{$event->name}}
+@endsection
+
 @section('content')
     <div class="container">
         <div class="row">
@@ -45,7 +68,10 @@
                             <hr>
                             <p class="bg-info"><strong>Note: </strong>you have to pay event fees at the time when you are going to an event</p>
                         </div>
+
+
                         <hr>
+                        <div id="shareBtn" class="btn btn-success clearfix pull-left">Share</div>
                         <a href="{{route('entryForm',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">Go To An Event</button></a>
 
                 </div>
