@@ -67,7 +67,7 @@
 
 
                         <hr>
-                        <div id="shareBtn" class="btn btn-success clearfix pull-left">Share</div>
+                        {{--<div id="shareBtn" class="btn btn-success clearfix pull-left">Share</div>--}}
                         <a href="{{route('entryForm',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">Go To An Event</button></a>
 
                 </div>
