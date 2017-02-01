@@ -97,28 +97,28 @@
                         </li>
                     </ul>
 
-                    <ul class="nav navbar-nav">
-                        &nbsp;<li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                Links<span class="caret"></span>
-                            </a>
+                    {{--<ul class="nav navbar-nav">--}}
+                        {{--&nbsp;<li class="dropdown">--}}
+                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
+                                {{--Links<span class="caret"></span>--}}
+                            {{--</a>--}}
 
-                            <ul class="dropdown-menu" role="menu">
+                            {{--<ul class="dropdown-menu" role="menu">--}}
 
-                                <li>
-                                    <a href="{{route('about')}}">
-                                        <i style="font-size:24px" class="fa">&#xf09a;</i>
-                                    </a>
-                                </li>
+                                {{--<li>--}}
+                                    {{--<a href="{{route('about')}}">--}}
+                                        {{--<i style="font-size:24px" class="fa">&#xf09a;</i>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
 
-                                <li>
-                                    <a href="{{route('about')}}">
-                                        <i style="font-size:24px" class="fa">&#xf230;</i>
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
+                                {{--<li>--}}
+                                    {{--<a href="{{route('about')}}">--}}
+                                        {{--<i style="font-size:24px" class="fa">&#xf230;</i>--}}
+                                    {{--</a>--}}
+                                {{--</li>--}}
+                            {{--</ul>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
 
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
