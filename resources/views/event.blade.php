@@ -8,7 +8,7 @@
                 FB.ui({
                     method: 'share',
                     display: 'popup',
-                    href: 'http://thecompete.com/{{$event->picture}}/event',
+                    href: 'http://thecompete.com/{{$event->id}}/event',
                 }, function(response){});
             });
         });
