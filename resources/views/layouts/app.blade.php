@@ -169,8 +169,9 @@
 
     <footer class="footer bg-primary">
         <div class="container">
-            <strong>A Atharv Bhute production <br>
-                thecompete © 2017</strong>
+            <strong>A Atharv Bhute & Prasad Ghorpade production</strong>
+            <br>
+                <strong style="padding-left:5em">thecompete © 2017</strong>
         </div>
     </footer>
 
