@@ -10,7 +10,7 @@
                     <div class="panel-heading">about</div>
                     <div class="panel-body">
                         <div class="col-md-12">
-                            <img class="img img-responsive" src="https://ucarecdn.com/337133a1-687a-46a8-953f-ca1fe0be7a27/16402589_259566454454950_6844269052006712789_o.jpg" alt="">
+                            {{--<img class="img img-responsive" src="https://ucarecdn.com/337133a1-687a-46a8-953f-ca1fe0be7a27/16402589_259566454454950_6844269052006712789_o.jpg" alt="">--}}
                         </div>
                         <div class="col-md-12">
                         <p><strong>thecompete.com</strong> this is only place where you can find all <strong>college events </strong> for example., sports event ,cultural events, technical events , and much more. you can <strong>take part in events</strong> or you can just <strong>upload your own events</strong> it's <strong>very simple</strong>.
