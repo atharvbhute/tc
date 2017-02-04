@@ -6,13 +6,13 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8 col-md-offset-2">
                 <div class="row">
 
                 @foreach($events as $event)
 
                     <a href="{{route('event',['id'=>$event->id])}}">
-                    <div class="col-sm-6 col-xs-12 col-md-4 col-lg-3">
+                    <div class="col-sm-6 col-xs-12 col-md-4">
                         <div class="thumbnail">
                             <img src="{{$event->picture}}-/resize/335x188/" alt="...">
                             <div class="caption">

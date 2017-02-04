@@ -1,8 +1,23 @@
 @extends('layouts.app')
-@section('content')
 @section('title')
     dashboard | thecompete
 @endsection
+
+@section('script')
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#shareBtn').click(function indiSahre(eventId,e){
+                e.preventDefault();
+                FB.ui({
+                    method: 'share',
+                    display: 'popup',
+                    href: 'http://thecompete.com/11/event',
+                }, function(response){});
+            });
+        });
+    </script>
+@endsection
+@section('content')
 
     <div class="container">
         <div class="row">
@@ -10,6 +25,8 @@
                 <div class="row">
                     @include('partials.flash')
                 @foreach($events as $event)
+
+
                         <a href="{{route('entries',['id'=>$event->id])}}">
                             <div class="col-sm-6 col-xs-12 col-md-4">
                                 <div class="thumbnail">
@@ -26,7 +43,9 @@
                                         <p class="bg-danger">unverified( it will verify once it check by us) or it's outdated </p>
                                     @endif
                                     <hr>
-                                        <a href="{{route('deleteEvent',['id'=>$event->id])}}"><button class="btn btn-danger">Delete</button></a>
+                                    {{--<a href="#" id="shareBtn" data-eventId="{{$event->id}}" class="btn btn-success clearfix pull-right">Share</a>--}}
+
+                                    <a href="{{route('deleteEvent',['id'=>$event->id])}}"><button class="btn btn-danger">Delete</button></a>
                                 </div>
                             </div>
                         </a>
