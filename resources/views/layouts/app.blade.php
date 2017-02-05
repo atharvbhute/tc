@@ -171,7 +171,7 @@
         <div class="container">
             <strong>A Atharv Bhute production</strong>
             <br>
-                <strong style="padding-left:3em">thecompete © 2017</strong>
+                <strong style="padding-left:1em">thecompete © 2017</strong>
         </div>
     </footer>
 
