@@ -14,12 +14,25 @@ class EventController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
-    public function index()
+    public function index(Request $request)
     {
-
+        $currentDate = date('y-m-d');
+        $expiredEvents = Event::where('date','<=',$currentDate)->get();
+        foreach ($expiredEvents as $expiredEvent){
+            $expiredEvent->verified=0;
+            $expiredEvent->save();
+        }
+        $events = Event::where('verified','=',1)->paginate(6);
+        if($request->ajax()) {
+            return [
+                'events' => view('ajax.index')->with(compact('events'))->render(),
+                'next_page' => $events->nextPageUrl()
+            ];
+        }
+        return view('welcome')->with('events',$events);
     }
 
     /**

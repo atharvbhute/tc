@@ -15,17 +15,7 @@ use App\Contact;
 use App\Event;
 use App\Mail\Confirmation;
 
-Route::get('/', function () {
-
-    $currentDate = date('y-m-d');
-    $expiredEvents = Event::where('date','<=',$currentDate)->get();
-    foreach ($expiredEvents as $expiredEvent){
-        $expiredEvent->verified=0;
-        $expiredEvent->save();
-    }
-    $events = Event::all()->where('verified','=',1);
-    return view('welcome')->with('events',$events);
-});
+Route::get('/', 'EventController@index');
 
 
 Auth::routes();
