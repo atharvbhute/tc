@@ -133,7 +133,8 @@
                         </div>
 
                         <div class="alert alert-info col-md-12">
-                            <p>please check all filled information ,once you upload it ,it will not be edit or delete</p>
+                            <p>please check all filled information ,once you upload it ,it will not be edit or delete,
+                            as you take registrations on the spot like that you have to take payment on the spot, we will integrate a suitable payment system for you ,very soon </p>
                         </div>
 
                         <div class="col-md-12 pull-left">
