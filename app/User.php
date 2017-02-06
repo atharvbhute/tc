@@ -46,4 +46,8 @@ class User extends Authenticatable
     public function events(){
        return $this->hasMany('App\Event');
     }
+
+    public function workshops(){
+        return $this->hasMany('App\Workshop');
+    }
 }

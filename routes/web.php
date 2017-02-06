@@ -16,13 +16,15 @@ use App\Event;
 use App\Mail\Confirmation;
 
 Route::get('/', 'EventController@index');
-
+Route::get('/workshops', 'WorkshopController@index');
 
 Auth::routes();
 
 Route::get('/upload', 'EventController@create')->middleware('auth');
+Route::get('/upload/workshop', 'WorkshopController@create')->middleware('auth');
 
 Route::post('/store','EventController@store');
+Route::post('/store/workshop','WorkshopController@store');
 //
 //Route::model('events','App\Event');
 //
@@ -33,6 +35,7 @@ Route::post('/store','EventController@store');
 
 
 Route::get('/{id}/event','EventController@show')->name('event');
+
 
 Route::get('/{id}/entryForm',function($id){
     return view('entryForm')->with('id',$id);
@@ -51,6 +54,10 @@ Route::get('/contact','ContactController@index')->name('contact');
 Route::get('/-/about',function(){
     return view('about');
 })->name('about');
+
+//Workshop Routes
+
+Route::get('/{id}/workshop','WorkshopController@show')->name('workshop');
 
 // Admin routes
 

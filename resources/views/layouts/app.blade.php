@@ -95,7 +95,14 @@
                                 </li>
                             </ul>
                         </li>
+
+                        <li>
+                            <a href="/workshops">
+                                Workshops
+                            </a>
+                        </li>
                     </ul>
+
 
                     {{--<ul class="nav navbar-nav">--}}
                         {{--&nbsp;<li class="dropdown">--}}
@@ -123,7 +130,27 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="nav navbar-nav navbar-right">
 
-                        <li><a href="{{ url('/upload') }}">Upload Event</a></li>
+                        <ul class="nav navbar-nav">
+                            &nbsp;<li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    Upload <span class="caret"></span>
+                                </a>
+
+                                <ul class="dropdown-menu" role="menu">
+
+                                    <li>
+                                        <a href="{{ url('/upload') }}">
+                                            Event
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <a href="{{ url('/upload/workshop') }}">
+                                            Workshop
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
 
 
                         <!-- Authentication Links -->
