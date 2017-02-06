@@ -45,6 +45,7 @@
                                     <hr>
                                     {{--<a href="#" id="shareBtn" data-eventId="{{$event->id}}" class="btn btn-success clearfix pull-right">Share</a>--}}
 
+                                    <a href="{{route('entries',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">entries</button></a>
                                     <a href="{{route('deleteEvent',['id'=>$event->id])}}"><button class="btn btn-danger">Delete</button></a>
                                 </div>
                             </div>
