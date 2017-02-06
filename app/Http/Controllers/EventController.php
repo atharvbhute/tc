@@ -25,7 +25,7 @@ class EventController extends Controller
             $expiredEvent->verified=0;
             $expiredEvent->save();
         }
-        $events = Event::where('verified','=',1)->paginate(4);
+        $events = Event::where('verified','=',1)->paginate(6);
         if($request->ajax()) {
             return [
                 'events' => view('ajax.index')->with(compact('events'))->render(),
