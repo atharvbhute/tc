@@ -67,7 +67,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="{{ url('/') }}">
-                        <strong>thecompete</strong>(<small>prototype</small>)
+                        <strong>thecompete</strong>(<small>beta</small>)
                     </a>
                 </div>
 
