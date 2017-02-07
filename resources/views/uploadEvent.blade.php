@@ -16,7 +16,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Upload Event</div>
+                    <div class="panel-heading">Upload Competition</div>
 
                     @include('partials.flash')
 
@@ -117,6 +117,14 @@
                                         <strong>{{ $errors->first('contactNumber') }}</strong>
                                     </span>
                             @endif
+                        </div>
+                        <div class="form-group col-md-12">
+                            <label for="sel1">Select Category</label>
+                            <select class="form-control" name="category_id">
+                                @foreach($categories as $category)
+                                    <option value="{{$category->id}}">{{$category->name}}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                         <div class="form-group col-md-12{{ $errors->has('description') ? ' has-error' : '' }}">

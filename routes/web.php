@@ -25,6 +25,7 @@ Route::get('/upload/workshop', 'WorkshopController@create')->middleware('auth');
 
 Route::post('/store','EventController@store');
 Route::post('/store/workshop','WorkshopController@store');
+Route::get('/category/{id}','CategoriesController@index');
 //
 //Route::model('events','App\Event');
 //

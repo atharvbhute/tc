@@ -52,157 +52,149 @@
     </script>
 </head>
 <body>
-    <div id="app">
-        <nav class="navbar navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
+<div id="app">
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        <strong>thecompete</strong>(<small>beta</small>)
-                    </a>
-                </div>
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    <strong>thecompete</strong>(<small>beta</small>)
+                </a>
+            </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="nav navbar-nav">
-                        &nbsp;<li class="dropdown">
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Categories<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+
+
+                            @foreach(\App\Category::all() as $category)
+                            <li>
+                                <a href="{{url('/category/'.$category->id)}}">
+                                    {{$category->name}}
+                                </a>
+                            </li>
+                            @endforeach
+
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            About<span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu">
+
+                            <li>
+                                <a href="{{route('about')}}">
+                                    About
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('contact') }}">
+                                    Contact Us
+                                </a>
+
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            {{--<ul class="nav navbar-nav">--}}
+            {{--&nbsp;<li class="dropdown">--}}
+            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
+            {{--Links<span class="caret"></span>--}}
+            {{--</a>--}}
+
+            {{--<ul class="dropdown-menu" role="menu">--}}
+
+            {{--<li>--}}
+            {{--<a href="{{route('about')}}">--}}
+            {{--<i style="font-size:24px" class="fa">&#xf09a;</i>--}}
+            {{--</a>--}}
+            {{--</li>--}}
+
+            {{--<li>--}}
+            {{--<a href="{{route('about')}}">--}}
+            {{--<i style="font-size:24px" class="fa">&#xf230;</i>--}}
+            {{--</a>--}}
+            {{--</li>--}}
+            {{--</ul>--}}
+            {{--</li>--}}
+            {{--</ul>--}}
+
+            <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li><a href="{{ url('/upload') }}">Upload Competition</a></li>
+
+                    <!-- Authentication Links -->
+                    @if (Auth::guest())
+                        <li><a href="{{ url('/login') }}">Login</a></li>
+                        <li><a href="{{ url('/register') }}">Register</a></li>
+                    @else
+                        <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                About<span class="caret"></span>
+                                {{ Auth::user()->name }} <span class="caret"></span>
                             </a>
 
                             <ul class="dropdown-menu" role="menu">
 
                                 <li>
-                                    <a href="{{route('about')}}">
-                                        About
+                                    <a href="{{ route('dash') }}">
+                                        Dashboard
                                     </a>
                                 </li>
 
                                 <li>
-                                    <a href="{{ route('contact') }}">
-                                        Contact Us
+                                    <a href="{{ url('/logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        Logout
                                     </a>
 
+                                    <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                                        {{ csrf_field() }}
+                                    </form>
                                 </li>
                             </ul>
                         </li>
-
-                        <li>
-                            <a href="/workshops">
-                                Workshops
-                            </a>
-                        </li>
-                    </ul>
-
-
-                    {{--<ul class="nav navbar-nav">--}}
-                        {{--&nbsp;<li class="dropdown">--}}
-                            {{--<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">--}}
-                                {{--Links<span class="caret"></span>--}}
-                            {{--</a>--}}
-
-                            {{--<ul class="dropdown-menu" role="menu">--}}
-
-                                {{--<li>--}}
-                                    {{--<a href="{{route('about')}}">--}}
-                                        {{--<i style="font-size:24px" class="fa">&#xf09a;</i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-
-                                {{--<li>--}}
-                                    {{--<a href="{{route('about')}}">--}}
-                                        {{--<i style="font-size:24px" class="fa">&#xf230;</i>--}}
-                                    {{--</a>--}}
-                                {{--</li>--}}
-                            {{--</ul>--}}
-                        {{--</li>--}}
-                    {{--</ul>--}}
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-
-                        <ul class="nav navbar-nav">
-                            &nbsp;<li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    Upload <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-
-                                    <li>
-                                        <a href="{{ url('/upload') }}">
-                                            Event
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ url('/upload/workshop') }}">
-                                            Workshop
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Login</a></li>
-                            <li><a href="{{ url('/register') }}">Register</a></li>
-                        @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
-
-                                    <li>
-                                        <a href="{{ route('dash') }}">
-                                            Dashboard
-                                        </a>
-                                    </li>
-
-                                    <li>
-                                        <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Logout
-                                        </a>
-
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
+                    @endif
+                </ul>
             </div>
-        </nav>
-
-        @yield('content')
-
-    </div>
-
-    <footer class="footer bg-primary">
-        <div class="container">
-            <strong>A Atharv Bhute production</strong>
-            <br>
-                <strong style="padding-left:1em">thecompete © 2017</strong>
         </div>
-    </footer>
+    </nav>
 
-    <!-- Scripts -->
-    <script src="/js/app.js"></script>
+    @yield('content')
+
+</div>
+
+<footer class="footer bg-primary">
+    <div class="container">
+        <strong>A Atharv Bhute production</strong>
+        <br>
+        <strong style="padding-left:1em">thecompete © 2017</strong>
+    </div>
+</footer>
+
+<!-- Scripts -->
+<script src="/js/app.js"></script>
 </body>
 </html>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use App\Competitors;
 use App\Event;
 use App\Http\Requests\EventRequest;
@@ -38,11 +39,14 @@ class EventController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function create()
     {
-        return view('uploadEvent');    }
+        $categories = Category::all();
+//        return dd($categories);
+        return view('uploadEvent')->with('categories',$categories);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -52,6 +56,7 @@ class EventController extends Controller
      */
     public function store(EventRequest $request)
     {
+//        return dd($request->all());
         $user = User::findorFail(Auth::id());
         $user->events()->save(new Event($request->all()));
         return redirect('upload')->with('status','your event is going to publish soon, once it\' verified');
