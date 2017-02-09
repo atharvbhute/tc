@@ -194,7 +194,7 @@
                                                         <p><strong>Name: </strong>{{$name}}</p>
                                                         <p><strong>Email: </strong>{{$email}}</p>
                                                         <p><strong>College Name: </strong>{{$clgName}}</p>
-                                                        <p><strong>Contact: </strong>{{$contactNumber}}</p>
+                                                        <p><strong>Contact: </strong>{{$contact}}</p>
 
 
                                                         <br>
