@@ -11,7 +11,7 @@
                 <p class="lead hidden-sm hidden-xs">Categories</p>
                     <div class="form-group hidden-md hidden-lg">
                         <div >
-                            <select name="" id="" class="form-control" onchange="location = this.value;">
+                            <select placeholder="select category" name="" id="" class="form-control" onchange="location = this.value;">
                                 @foreach(\App\Category::all() as $category)
                                     <option value="{{url("/category/$category->id")}}">
                                         {{$category->name}}
@@ -48,7 +48,7 @@
     @endforeach
 
    <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
-       <div class="col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-lg-offset-4 bottom">{{$events->links()}}</div>
+       <div class="col-md-offset-4 col-sm-offset-2 col-lg-offset-4 bottom">{{$events->links()}}</div>
    </div>
 
 

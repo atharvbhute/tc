@@ -62,7 +62,7 @@
                             </div>
                         <div class="col-md-12 col-sm-12 col-xs-12 col-lg-12">
                             <hr>
-                            <p class="bg-info"><strong>Note: </strong>you have to pay event fees at the time when you are going to an event</p>
+                            <p class="bg-info"><strong>Note: </strong>you have to pay event fees on the spot</p>
                         </div>
 
 

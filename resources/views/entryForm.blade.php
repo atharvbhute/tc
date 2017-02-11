@@ -57,7 +57,7 @@
 
 
                         <div class="alert alert-info col-md-12">
-                            <p>please check all filled information ,once you submit it ,it will not be edit or delete</p>
+                            <p>please check all filled information ,once you submit it ,it will not be edited or deleted</p>
                         </div>
 
                         <div class="col-md-12 pull-right">

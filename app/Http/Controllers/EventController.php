@@ -59,7 +59,7 @@ class EventController extends Controller
 //        return dd($request->all());
         $user = User::findorFail(Auth::id());
         $user->events()->save(new Event($request->all()));
-        return redirect('upload')->with('status','your event is going to publish soon, once it\' verified');
+        return redirect('upload')->with('status','your event is going to publish soon, once it\'s verified');
     }
 
     /**
@@ -119,6 +119,6 @@ class EventController extends Controller
         if($event){
             return back()->with('status','Event is deleted successfully');
         }
-        return back()->with('status','sorry you can\'t delete event right now for user level purposes, you can delete your event once its date is gone');
+        return back()->with('status','sorry you can\'t delete event right now for user level purposes, you can delete your event once it\'s expired');
     }
 }
