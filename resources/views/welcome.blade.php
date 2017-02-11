@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="row">
-<section class="events endless-pagination" data-next-page="{{ $events->nextPageUrl() }}">
+{{--<section class="events endless-pagination" data-next-page="{{ $events->nextPageUrl() }}">--}}
     @foreach($events as $event)
         <a href="{{route('event',['id'=>$event->id])}}">
             <div class="col-sm-6 col-xs-12 col-md-4">
@@ -24,37 +24,41 @@
             </div>
         </a>
     @endforeach
-</section>
+
+   <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
+       <div class="col-md-offset-4 col-sm-offset-4 col-xs-offset-4 col-lg-offset-4 bottom">{{$events->links()}}</div>
+   </div>
+{{--</section>--}}
 
 
-                    <script>
+                    {{--<script>--}}
 
-                        $(document).ready(function() {
+                        {{--$(document).ready(function() {--}}
 
-                            $(window).scroll(function(){
-                                var page = $('.endless-pagination').data('next-page');
+                            {{--$(window).scroll(function(){--}}
+                                {{--var page = $('.endless-pagination').data('next-page');--}}
 
-                                if(page !== null) {
+                                {{--if(page !== null) {--}}
 
-                                    clearTimeout( $.data( this, "scrollCheck" ) );
+                                    {{--clearTimeout( $.data( this, "scrollCheck" ) );--}}
 
-                                    $.data( this, "scrollCheck", setTimeout(function() {
-                                        var scroll_position_for_posts_load = $(window).height() + $(window).scrollTop() + 100;
+                                    {{--$.data( this, "scrollCheck", setTimeout(function() {--}}
+                                        {{--var scroll_position_for_posts_load = $(window).height() + $(window).scrollTop() + 100;--}}
 
-                                        if(scroll_position_for_posts_load >= $(document).height()) {
-                                            $.get(page, function(data){
-                                                $('.events').append(data.events);
-                                                $('.endless-pagination').data('next-page', data.next_page);
-                                            });
-                                        }
-                                    }, 350))
+                                        {{--if(scroll_position_for_posts_load >= $(document).height()) {--}}
+                                            {{--$.get(page, function(data){--}}
+                                                {{--$('.events').append(data.events);--}}
+                                                {{--$('.endless-pagination').data('next-page', data.next_page);--}}
+                                            {{--});--}}
+                                        {{--}--}}
+                                    {{--}, 350))--}}
 
-                                }
-                            });
+                                {{--}--}}
+                            {{--});--}}
 
-                        })
+                        {{--})--}}
 
-                    </script>
+                    {{--</script>--}}
 
                 </div>
             </div>

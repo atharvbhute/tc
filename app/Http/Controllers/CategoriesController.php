@@ -14,13 +14,13 @@ class CategoriesController extends Controller
             $expiredEvent->verified=0;
             $expiredEvent->save();
         }
-        $events = Event::where('verified','=',1)->where('category_id','=',$id)->paginate(4);
-        if($request->ajax()) {
-            return [
-                'events' => view('ajax.index')->with(compact('events'))->render(),
-                'next_page' => $events->nextPageUrl()
-            ];
-        }
+        $events = Event::where('verified','=',1)->where('category_id','=',$id)->paginate(6);
+//        if($request->ajax()) {
+//            return [
+//                'events' => view('ajax.index')->with(compact('events'))->render(),
+//                'next_page' => $events->nextPageUrl()
+//            ];
+//        }
         return view('welcome')->with('events',$events);
     }
 }
