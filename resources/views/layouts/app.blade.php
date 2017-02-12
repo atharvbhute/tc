@@ -80,32 +80,33 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <strong>thecompete</strong>(<small>beta</small>)
                 </a>
+
+                {{--<div class="navbar-brand">--}}
+                    {{--<form class="navbar-form" role="search">--}}
+                        {{--<div class="input-group">--}}
+                            {{--<input type="text" class="form-control" placeholder="Search" name="q">--}}
+                            {{--<div class="input-group-btn">--}}
+                                {{--<button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                    {{--</form>--}}
+                {{--</div>--}}
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                            About<span class="caret"></span>
-                        </a>
+                    <div class="col-md-12">
+                        <form class="navbar-form " role="search">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="Search" name="q">
+                                <div class="input-group-btn">
+                                    <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
 
-                        <ul class="dropdown-menu" role="menu">
-
-                            <li>
-                                <a href="{{route('about')}}">
-                                    About
-                                </a>
-                            </li>
-
-                            <li>
-                                <a href="{{ route('contact') }}">
-                                    Contact Us
-                                </a>
-
-                            </li>
-                        </ul>
-                    </li>
                 </ul>
 
             {{--<ul class="nav navbar-nav">--}}
@@ -133,13 +134,34 @@
 
             <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                    About<span class="caret"></span>
+                    </a>
+
+                    <ul class="dropdown-menu" role="menu">
+
+                    <li>
+                    <a href="{{route('about')}}">
+                    About
+                    </a>
+                    </li>
+
+                    <li>
+                    <a href="{{ route('contact') }}">
+                    Contact Us
+                    </a>
+
+                    </li>
+                    </ul>
+                    </li>
 
                     <li><a href="{{ url('/upload') }}">Upload Competition</a></li>
 
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/register') }}">Sign Up</a></li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
