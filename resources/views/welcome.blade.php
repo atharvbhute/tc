@@ -30,6 +30,7 @@
                 </div>
             </div>
             <div class="col-md-8">
+                @include('partials.flash')
 
     @foreach($events as $event)
         <a href="{{route('event',['id'=>$event->id])}}">

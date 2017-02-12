@@ -97,14 +97,14 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <div class="col-md-12">
-                        <form class="navbar-form " role="search">
+                        {!! Form::open(['method'=>'post','action'=>'EventController@search','class'=>'navbar-form']) !!}
                             <div class="input-group">
                                 <input type="text" class="form-control" placeholder="Search" name="q">
                                 <div class="input-group-btn">
                                     <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                                 </div>
                             </div>
-                        </form>
+                        {!! Form::close() !!}
                     </div>
 
                 </ul>

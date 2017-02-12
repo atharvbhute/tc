@@ -17,6 +17,7 @@ use App\Mail\Confirmation;
 
 Route::get('/', 'EventController@index');
 Route::get('/workshops', 'WorkshopController@index');
+Route::post('/search', 'EventController@search');
 
 Auth::routes();
 

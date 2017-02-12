@@ -18,6 +18,28 @@ class EventController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
 
+    public function search(Request $request){
+        $currentDate = date('y-m-d');
+        $expiredEvents = Event::where('date','<=',$currentDate)->get();
+        foreach ($expiredEvents as $expiredEvent){
+            $expiredEvent->verified=0;
+            $expiredEvent->save();
+        }
+        $events = Event::where('name','like','%'.$request->q.'%')->paginate(6);
+//        if($request->ajax()) {
+//            return [
+//                'events' => view('ajax.index')->with(compact('events'))->render(),
+//                'next_page' => $events->nextPageUrl()
+//            ];
+//        }
+            $status = 'result for '.$request->q.'.';
+            return view('welcome',compact('events','status'));
+
+
+
+
+    }
+
     public function index(Request $request)
     {
         $currentDate = date('y-m-d');
