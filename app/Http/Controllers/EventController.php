@@ -6,7 +6,6 @@ use App\Category;
 use App\Competitors;
 use App\Event;
 use App\Http\Requests\EventRequest;
-use App\Http\Requests\MaineventRequest;
 use App\Mainevent;
 use App\User;
 use Illuminate\Http\Request;
@@ -84,7 +83,7 @@ class EventController extends Controller
         return redirect(route('mainEventId',['mainEventId'=>$request->mainevent_id]))->with('status','your event is going to publish soon, once it\'s verified');
     }
 
-    public function mainEventstore(MaineventRequest $request){
+    public function mainEventstore(Request $request){
         $user = User::findorFail(Auth::id());
         $mainEventId = $user->mainEvents()->save(new Mainevent($request->all()))->id;
 //        return dd($mainEventId);
