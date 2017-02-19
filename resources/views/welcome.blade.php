@@ -8,6 +8,9 @@
         <div class="row">
             <div class="col-md-12">
             <div class="col-md-3">
+                <div class="list-group">
+                    <a href="{{url("/main_events")}}" class="list-group-item">MAIN EVENTS</a>
+                </div>
                 <p class="lead hidden-sm hidden-xs">Categories</p>
                     <div class="form-group hidden-md hidden-lg">
                         <div >
@@ -24,10 +27,7 @@
 
 
                 <div class="list-group hidden-sm hidden-xs">
-                    <a href="{{url("/main_events")}}" class="list-group-item">MAIN EVENTS</a>
-                    <br>
-                    <br>
-                    <br>
+
                 @foreach(\App\Category::all() as $category)
                             <a href="{{url("/category/$category->id")}}" class="list-group-item">{{$category->name}}</a>
                     @endforeach
