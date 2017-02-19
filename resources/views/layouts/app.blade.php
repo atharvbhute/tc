@@ -156,7 +156,7 @@
                     </ul>
                     </li>
 
-                    <li><a href="{{ url('/upload') }}">Upload Competition</a></li>
+                    <li><a href="{{ url('/main-event') }}">Upload Competition</a></li>
 
                     <!-- Authentication Links -->
                     @if (Auth::guest())

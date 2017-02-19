@@ -6,6 +6,7 @@ use App\Category;
 use App\Competitors;
 use App\Event;
 use App\Http\Requests\EventRequest;
+use App\Mainevent;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -65,9 +66,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        $categories = Category::all();
-//        return dd($categories);
-        return view('uploadEvent')->with('categories',$categories);
+        return view('uploadMainevent');
     }
 
     /**
@@ -81,7 +80,19 @@ class EventController extends Controller
 //        return dd($request->all());
         $user = User::findorFail(Auth::id());
         $user->events()->save(new Event($request->all()));
-        return redirect('upload')->with('status','your event is going to publish soon, once it\'s verified');
+        return redirect(route('mainEventId',['mainEventId'=>$request->mainevent_id]))->with('status','your event is going to publish soon, once it\'s verified');
+    }
+
+    public function mainEventstore(Request $request){
+        $user = User::findorFail(Auth::id());
+        $mainEventId = $user->mainEvents()->save(new Mainevent($request->all()))->id;
+//        return dd($mainEventId);
+        return redirect(route('mainEventId',['mainEventId'=>$mainEventId]));
+
+
+//        return redirect('upload')->with('status','your event is going to publish soon, once it\'s verified');
+
+
     }
 
     /**

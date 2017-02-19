@@ -12,6 +12,8 @@ return array(
     'CreateCompetitorsTable' => $baseDir . '/database/migrations/2017_01_21_103253_create_competitors_table.php',
     'CreateContactsTable' => $baseDir . '/database/migrations/2017_01_24_105502_create_contacts_table.php',
     'CreateEventsTable' => $baseDir . '/database/migrations/2017_01_19_173253_create_events_table.php',
+    'CreateMaineventColumn' => $baseDir . '/database/migrations/2017_02_19_110541_create_mainevent_column.php',
+    'CreateMaineventsTable' => $baseDir . '/database/migrations/2017_02_19_110442_create_mainevents_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',
     'CreateUsersTable' => $baseDir . '/database/migrations/2014_10_12_000000_create_users_table.php',
     'CreateWorkshopsTable' => $baseDir . '/database/migrations/2017_02_06_200915_create_workshops_table.php',

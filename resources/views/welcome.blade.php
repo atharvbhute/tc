@@ -24,7 +24,8 @@
 
 
                 <div class="list-group hidden-sm hidden-xs">
-                    @foreach(\App\Category::all() as $category)
+                    <a href="{{url("/main_events")}}" class="list-group-item">MAIN EVENTS</a>
+                @foreach(\App\Category::all() as $category)
                             <a href="{{url("/category/$category->id")}}" class="list-group-item">{{$category->name}}</a>
                     @endforeach
                 </div>

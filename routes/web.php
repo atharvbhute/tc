@@ -21,10 +21,15 @@ Route::post('/search', 'EventController@search');
 
 Auth::routes();
 
-Route::get('/upload', 'EventController@create')->middleware('auth');
+Route::get('/main-event', 'EventController@create')->middleware('auth');
+Route::post('/main-event/store', 'EventController@mainEventstore')->middleware('auth');
+Route::get('/upload/-/{id}', function($id){
+    return view('uploadEvent')->with('mainEventId',$id);
+})->middleware('auth')->name('mainEventId');
+
 Route::get('/upload/workshop', 'WorkshopController@create')->middleware('auth');
 
-Route::post('/store','EventController@store');
+Route::post('/store/-/competitions','EventController@store');
 Route::post('/store/workshop','WorkshopController@store');
 Route::get('/category/{id}','CategoriesController@index');
 //

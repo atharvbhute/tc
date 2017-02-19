@@ -22,7 +22,7 @@
 
                     <div class="panel-body">
 
-                    {!! Form::open(['method' => 'POST' , 'action' => 'EventController@store' ]) !!}
+                    {!! Form::open(['method' => 'POST' , 'action' => 'EventController@store']) !!}
                         <div class="form-group col-md-6{{ $errors->has('name') ? ' has-error' : '' }}">
                             {{ Form::label('title','Event Name') }}
                             {{ Form::text('name',old('name'),['placeholder'=>'Ex .Box cricket, cs go , singing contest','class' => 'form-control']) }}
@@ -41,6 +41,8 @@
                                 </span>
                             @endif
                         </div>
+{{--                        {{ Form::hidden('mainevent_id',"{{$mainEventId}}") }}--}}
+                        {{--{{$mainEventId}}--}}
 
                         <div class="form-group col-md-12{{ $errors->has('address') ? ' has-error' : '' }}">
                             {{ Form::label('title','Address') }}
@@ -121,11 +123,12 @@
                         <div class="form-group col-md-12">
                             <label for="sel1">Select Category</label>
                             <select class="form-control" name="category_id">
-                                @foreach($categories as $category)
+                                @foreach(App\Category::all() as $category)
                                     <option value="{{$category->id}}">{{$category->name}}</option>
                                 @endforeach
                             </select>
                         </div>
+                        <input name="mainevent_id" type="hidden" value={{$mainEventId}}>
 
                         <div class="form-group col-md-12{{ $errors->has('description') ? ' has-error' : '' }}">
                             <div class="bg-info">
