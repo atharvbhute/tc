@@ -6,10 +6,12 @@ use App\Category;
 use App\Competitors;
 use App\Event;
 use App\Http\Requests\EventRequest;
+use App\Http\Requests\MaineventRequest;
 use App\Mainevent;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use
 
 class EventController extends Controller
 {
