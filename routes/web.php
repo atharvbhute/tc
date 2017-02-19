@@ -39,7 +39,7 @@ Route::get('/main_events',function(){
 });
 
 Route::get('/main_event/{id}',function ($id){
-    $main_event = App\Mainevent::find($id)->first();
+    $main_event = App\Mainevent::find($id);
     $events = App\Event::where('mainevent_id','=',$id)->where('verified','=',1)->paginate(6);
     return view('welcome',compact('events'))->with('main_event',$main_event);
 })->name('main_event');

@@ -83,7 +83,7 @@ class EventController extends Controller
         return redirect(route('mainEventId',['mainEventId'=>$request->mainevent_id]))->with('status','your event is going to publish soon, once it\'s verified');
     }
 
-    public function mainEventstore(Request $request){
+    public function mainEventstore(MaineventRequest $request){
         $user = User::findorFail(Auth::id());
         $mainEventId = $user->mainEvents()->save(new Mainevent($request->all()))->id;
 //        return dd($mainEventId);
