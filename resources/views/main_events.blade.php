@@ -25,6 +25,9 @@
 
                     <div class="list-group hidden-sm hidden-xs">
                         <a href="{{url("/main_events")}}" class="list-group-item">MAIN EVENTS</a>
+                        <br>
+                        <br>
+                        <br>
                         @foreach(\App\Category::all() as $category)
                             <a href="{{url("/category/$category->id")}}" class="list-group-item">{{$category->name}}</a>
                         @endforeach
@@ -33,15 +36,14 @@
                 <div class="col-md-8">
                     @include('partials.flash')
 
-                    @foreach($events as $event)
+                    @foreach($main_events as $main_event)
                         <a href="{{route('main_event',['id'=>$main_event->id])}}">
                             <div class="col-sm-12 col-xs-12 col-md-6">
                                 <div class="thumbnail">
-                                    <img src="{{$event->picture}}-/resize/335x188/" alt="...">
+                                    <img src="{{$main_event->picture}}-/resize/335x188/" alt="...">
                                     <div class="caption">
-                                        <p><Strong>Name: </Strong>{{$event->name}}</p>
-                                        <p><Strong>Organiser: </Strong>{{$event->organiser}}</p>
-                                        <p><Strong>Date: </Strong>{{$event->date}}</p>
+                                        <p><Strong>Name: </Strong>{{$main_event->name}}</p>
+                                        <p><Strong>Organiser: </Strong>{{$main_event->organiser}}</p>
                                         {{--<p><Strong>Address: </Strong>{{$event->address}}</p>--}}
                                     </div>
                                 </div>
@@ -49,9 +51,9 @@
                         </a>
                     @endforeach
 
-                    <div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">
-                        <div class="col-md-offset-4 col-sm-offset-2 col-lg-offset-4 bottom">{{$events->links()}}</div>
-                    </div>
+                    {{--<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">--}}
+                        {{--<div class="col-md-offset-4 col-sm-offset-2 col-lg-offset-4 bottom">{{$events->links()}}</div>--}}
+                    {{--</div>--}}
 
 
 

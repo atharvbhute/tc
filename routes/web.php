@@ -32,6 +32,18 @@ Route::get('/upload/workshop', 'WorkshopController@create')->middleware('auth');
 Route::post('/store/-/competitions','EventController@store');
 Route::post('/store/workshop','WorkshopController@store');
 Route::get('/category/{id}','CategoriesController@index');
+
+Route::get('/main_events',function(){
+    $main_events = App\Mainevent::all();
+    return view('main_events')->with('main_events',$main_events);
+});
+
+Route::get('/main_event/{id}',function ($id){
+    $main_event = App\Mainevent::find($id)->first();
+    $events = App\Event::where('mainevent_id','=',$id)->where('verified','=',1)->paginate(6);
+    return view('welcome',compact('events'))->with('main_event',$main_event);
+})->name('main_event');
+
 //
 //Route::model('events','App\Event');
 //

@@ -25,6 +25,9 @@
 
                 <div class="list-group hidden-sm hidden-xs">
                     <a href="{{url("/main_events")}}" class="list-group-item">MAIN EVENTS</a>
+                    <br>
+                    <br>
+                    <br>
                 @foreach(\App\Category::all() as $category)
                             <a href="{{url("/category/$category->id")}}" class="list-group-item">{{$category->name}}</a>
                     @endforeach
@@ -32,6 +35,7 @@
             </div>
             <div class="col-md-8">
                 @include('partials.flash')
+                <h1 class="bg bg-danger">{{ $main_event->name or "" }}</h1>
 
     @foreach($events as $event)
         <a href="{{route('event',['id'=>$event->id])}}">
