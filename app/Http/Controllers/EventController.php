@@ -11,7 +11,6 @@ use App\Mainevent;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use
 
 class EventController extends Controller
 {
