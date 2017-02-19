@@ -84,6 +84,11 @@ class EventController extends Controller
     }
 
     public function mainEventstore(Request $request){
+        $this->validate($request, [
+            'name' => 'required',
+            'organiser' => 'required',
+            'picture' => 'required'
+        ]);
         $user = User::findorFail(Auth::id());
         $mainEventId = $user->mainEvents()->save(new Mainevent($request->all()))->id;
 //        return dd($mainEventId);
