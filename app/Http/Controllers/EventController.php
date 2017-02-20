@@ -66,7 +66,9 @@ class EventController extends Controller
      */
     public function create()
     {
-        return view('uploadMainevent');
+        $existedEvents = Mainevent::where('user_id','=',Auth::id())->get();
+        return view('uploadMainevent')->with('existedEvents',$existedEvents);
+//        return dd($existedEvents);
     }
 
     /**

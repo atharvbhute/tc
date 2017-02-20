@@ -15,6 +15,33 @@
     <div class="container">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
+                @if($existedEvents->count()==!0)
+                    <div class="bg bg-danger"><p>Add in Existed One</p></div>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>organiser</th>
+                            <th>ADD</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($existedEvents as $existedEvent)
+                            <tr>
+                                <td>{{$existedEvent->name}}</td>
+                                <td>{{$existedEvent->organiser}}</td>
+                                <td><a href="{{route('mainEventId',['mainEventId'=>$existedEvent->id])}}" class="btn btn-info">add</a></td>
+                            </tr>
+
+                        @endforeach
+
+                        </tbody>
+                    </table>
+                    <hr>
+                <p class="bg bg-info">or create new one</p>
+
+                @endif
+
                 <div class="panel panel-default">
                     <div class="panel-heading">Main Event</div>
 

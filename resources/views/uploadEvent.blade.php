@@ -24,7 +24,7 @@
 
                     {!! Form::open(['method' => 'POST' , 'action' => 'EventController@store']) !!}
                         <div class="form-group col-md-6{{ $errors->has('name') ? ' has-error' : '' }}">
-                            {{ Form::label('title','Event Name') }}
+                            {{ Form::label('title','Competition Name') }}
                             {{ Form::text('name',old('name'),['placeholder'=>'Ex .Box cricket, cs go , singing contest','class' => 'form-control']) }}
                             @if ($errors->has('name'))
                                 <span class="help-block">
@@ -33,7 +33,7 @@
                             @endif
                         </div>
                         <div class="form-group col-md-6{{ $errors->has('organiser') ? ' has-error' : '' }}">
-                            {{ Form::label('title','Organiser') }}
+                            {{ Form::label('title','organiser or event name') }}
                             {{ Form::text('organiser',old('organiser'),['placeholder'=>'Ex .mindsparks ,etc','class' => 'form-control']) }}
                             @if ($errors->has('organiser'))
                                 <span class="help-block">
