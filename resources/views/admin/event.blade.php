@@ -50,6 +50,9 @@
                         <div class="col-md-4">
                             <a href="{{route('unverify',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">unverify</button></a>
                         </div>
+                        <div class="col-md-4">
+                            <a href="{{route('hot',['id'=>$event->id])}}"><button class="btn btn-primary pull-right">make hot</button></a>
+                        </div>
                         <a href="{{route('delete_event',['id'=>$event->id])}}"><button class="btn btn-danger">delete</button></a>
 
                     </div>

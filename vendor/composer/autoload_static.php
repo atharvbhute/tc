@@ -316,6 +316,7 @@ class ComposerStaticInit97d31a7fb754efc2ee65f1ac1aa9f778
         'CreateCompetitorsTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_21_103253_create_competitors_table.php',
         'CreateContactsTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_24_105502_create_contacts_table.php',
         'CreateEventsTable' => __DIR__ . '/../..' . '/database/migrations/2017_01_19_173253_create_events_table.php',
+        'CreateHotColumn' => __DIR__ . '/../..' . '/database/migrations/2017_02_21_070146_create_hot_column.php',
         'CreateMaineventColumn' => __DIR__ . '/../..' . '/database/migrations/2017_02_19_110541_create_mainevent_column.php',
         'CreateMaineventsTable' => __DIR__ . '/../..' . '/database/migrations/2017_02_19_110442_create_mainevents_table.php',
         'CreatePasswordResetsTable' => __DIR__ . '/../..' . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',

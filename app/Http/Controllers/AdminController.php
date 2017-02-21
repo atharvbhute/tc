@@ -35,10 +35,17 @@ class AdminController extends Controller
         $event = Event::findOrFail($id);
         $event->verified = 1;
         if($event->save()){
-            return redirect(route('verified'))->with('status','event is successfully verified');
+            return redirect(route('unverified'))->with('status','event is successfully verified');
         }else{
-            return redirect(route('verified'))->with('status','event is successfully unverified');
+            return redirect(route('unverified'))->with('status','event is successfully unverified');
         }
+    }
+
+    public function makeHot($id){
+        $event = Event::find($id);
+        $event->hot = true;
+        $event->save();
+        return redirect(route('unverified'))->with('status','event has been hot');
     }
 
     public function unverify($id){

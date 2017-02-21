@@ -54,6 +54,10 @@ Route::get('/main_event/{id}',function ($id){
 
 
 Route::get('/{id}/event','EventController@show')->name('event');
+Route::get('/hot_event',function(){
+    $events = Event::where('verified','=',1)->where('hot','=',1)->paginate(6);
+    return view('welcome')->with('events',$events);
+});
 
 
 Route::get('/{id}/entryForm',function($id){
@@ -87,6 +91,7 @@ Route::group(['middleware' => 'admin'], function () {
     Route::get('/admin/panel/unverified','AdminController@unverified')->name('unverified');
     Route::get('/admin/panel/{id}/verify','AdminController@verify')->name('verify');
     Route::get('/admin/panel/{id}/unverify','AdminController@unverify')->name('unverify');
+    Route::get('/admin/panel/{id}/hot','AdminController@makeHot')->name('hot');
     Route::get('/admin/panel/{id}/event','AdminController@event')->name('admin_event');
     Route::get('/admin/panel/{id}/delete','AdminController@deleteEvent')->name('delete_event');
     Route::get('/admin/panel/contactMessages',function(){
