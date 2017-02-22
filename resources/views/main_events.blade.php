@@ -10,7 +10,7 @@
                 <div class="col-md-3">
                     <div class="list-group">
                         <a href="{{url("/hot_event")}}" class="list-group-item"><p class="bg bg-danger">HOT</p></a>
-                        <a href="{{url("/main_events")}}" class="list-group-item">MAIN EVENTS</a>
+                        <a href="{{url("/main_events")}}" class="list-group-item"><strong><p class="bg bg-primary">MAIN EVENTS</p></strong></a>
                     </div>
                     <p class="lead hidden-sm hidden-xs">Categories</p>
 
