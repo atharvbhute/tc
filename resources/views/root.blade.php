@@ -44,7 +44,7 @@
                             <img class="img-responsive" src="{{$category->image}}" alt="">
                             <div class="overlay">
                                 <h2>{{$category->name}}</h2>
-                                <a class="info" href="{{url("/category/$category->id")}}">click hear to see</a>
+                                <a class="info" href="{{url("/category/$category->id")}}"><strong>click hear to see</strong></a>
                             </div>
                         </div>
                     </div>
