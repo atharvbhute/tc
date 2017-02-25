@@ -27,8 +27,8 @@
                     </div>
                 </div>
 
-
-               <h1> Categories </h1>
+               <h1 style="text-align:center;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif"> Categories </h1>
+                <hr>
                 <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="hovereffect">
                         <img class="img-responsive" src="https://ucarecdn.com/dd91a833-953f-4f64-a968-e0583aadcaec/-/crop/732x412/47,0/-/preview/" alt="">
