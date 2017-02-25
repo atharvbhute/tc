@@ -37,52 +37,6 @@
             <div class="col-md-8">
                 @include('partials.flash')
 
-                <style type="text/css">
-                    .thumbnail.right-caption > img {
-                        float: left;
-                        margin-right: 9px;
-                    }
-
-                    .thumbnail.right-caption {
-                        float: left;
-                    }
-
-                    .thumbnail.right-caption > .caption {
-                        padding: 4px;
-                    }
-                    ​
-                </style>
-
-                @foreach(App\Event::where('name','=','National Level Conference')->get() as $national_conference)
-                    <a href="{{route('event',['id'=>$national_conference->id])}}">
-                        <div class="col-md-12">
-                            <div class="thumbnail col-md-12 right-caption span4">
-                                <img src="{{$national_conference->picture}}-/resize/335x188/" alt="...">
-                                <div class="caption bg-danger">
-                                    <p><Strong>Name: </Strong>{{$national_conference->name}}</p>
-                                    <p><Strong>Organiser: </Strong>{{$national_conference->organiser}}</p>
-                                    <p><Strong>Date: </Strong>{{$national_conference->date}}</p>
-                                    <p><Strong>Address: </Strong>{{$national_conference->address}}</p>
-                                </div>
-                            </div>
-                        </div>
-                        <style type="text/css">
-                            .thumbnail.right-caption > img {
-                                float: left;
-                                margin-right: 9px;
-                            }
-
-                            .thumbnail.right-caption {
-                                float: left;
-                            }
-
-                            .thumbnail.right-caption > .caption {
-                                padding: 4px;
-                            }
-                            ​
-                        </style>
-                    </a>
-                @endforeach
 
     @foreach($events as $event)
         <a href="{{route('event',['id'=>$event->id])}}">
