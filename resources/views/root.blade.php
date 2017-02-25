@@ -12,7 +12,7 @@
                         <img class="img-responsive" src="https://ucarecdn.com/3e99dfa9-d074-49d5-a7be-89e668947797/-/crop/2307x1296/131,0/-/preview/" alt="">
                         <div class="overlay">
                             <h2>HOT</h2>
-                            <a class="info" href="{{url("/hot_event")}}">See Hot Events</a>
+                            <a class="info" href="{{url("/hot_event")}}"><strong>click hear to see</strong></a>
                         </div>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                         <img class="img-responsive" src="https://ucarecdn.com/b093ea07-9695-4778-881b-9c3d91d1214d/EVENTS.png" alt="">
                         <div class="overlay">
                             <h2>Main Events</h2>
-                            <a class="info" href="{{url("/main_events")}}">See Main Events</a>
+                            <a class="info" href="{{url("/main_events")}}"><strong>click hear to see</strong></a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +34,7 @@
                         <img class="img-responsive" src="https://ucarecdn.com/dd91a833-953f-4f64-a968-e0583aadcaec/-/crop/732x412/47,0/-/preview/" alt="">
                         <div class="overlay">
                             <h2>All</h2>
-                            <a class="info" href="{{url("/all")}}">click hear to see</a>
+                            <a class="info" href="{{url("/all")}}"><strong>click hear to see</strong></a>
                         </div>
                     </div>
                 </div>
