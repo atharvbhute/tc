@@ -13,6 +13,7 @@ return array(
     'CreateContactsTable' => $baseDir . '/database/migrations/2017_01_24_105502_create_contacts_table.php',
     'CreateEventsTable' => $baseDir . '/database/migrations/2017_01_19_173253_create_events_table.php',
     'CreateHotColumn' => $baseDir . '/database/migrations/2017_02_21_070146_create_hot_column.php',
+    'CreateImagesInCategories' => $baseDir . '/database/migrations/2017_02_25_151653_create_images_in_categories.php',
     'CreateMaineventColumn' => $baseDir . '/database/migrations/2017_02_19_110541_create_mainevent_column.php',
     'CreateMaineventsTable' => $baseDir . '/database/migrations/2017_02_19_110442_create_mainevents_table.php',
     'CreatePasswordResetsTable' => $baseDir . '/database/migrations/2014_10_12_100000_create_password_resets_table.php',

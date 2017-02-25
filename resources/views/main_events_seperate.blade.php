@@ -7,34 +7,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="col-md-3">
-                    <div class="list-group">
-                        <a href="{{url("/hot_event")}}" class="list-group-item"><p class="bg bg-danger">HOT</p></a>
-                        <a href="{{url("/main_events")}}" class="list-group-item"><strong><p class="bg bg-primary">MAIN EVENTS</p></strong></a>
-                    </div>
-                    <p class="lead hidden-sm hidden-xs">Categories</p>
-                    <div class="form-group hidden-md hidden-lg">
-                        <div >
-                            <select placeholder="select category" name="" id="" class="form-control" onchange="location = this.value;">
-                                @foreach(\App\Category::all() as $category)
-                                    <option value="{{url("/category/$category->id")}}">
-                                        {{$category->name}}
-                                    </option>
-                                @endforeach
 
-                            </select>
-                        </div>
-                    </div>
-
-
-                    <div class="list-group hidden-sm hidden-xs">
-
-                        @foreach(\App\Category::all() as $category)
-                            <a href="{{url("/category/$category->id")}}" class="list-group-item">{{$category->name}}</a>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="col-md-8">
+                <div class="col-md-offset-2 col-md-8">
                     @include('partials.flash')
                     <h1 class="bg bg-danger">{{ $main_event->name or "" }}</h1>
 

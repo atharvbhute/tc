@@ -7,50 +7,104 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="col-md-3">
-                    <div class="list-group">
-                        <a href="{{url("/hot_event")}}" class="list-group-item"><p class="bg bg-danger">HOT</p></a>
-                        <a href="{{url("/main_events")}}" class="list-group-item"><strong><p class="bg bg-primary">MAIN EVENTS</p></strong></a>
-                    </div>
-                    <p class="lead hidden-sm hidden-xs">Categories</p>
-
-                    <div class="form-group hidden-md hidden-lg">
-                        <div >
-                            <select placeholder="select category" name="" id="" class="form-control" onchange="location = this.value;">
-                                @foreach(\App\Category::all() as $category)
-                                    <option value="{{url("/category/$category->id")}}">
-                                        {{$category->name}}
-                                    </option>
-                                @endforeach
-
-                            </select>
-                        </div>
-                    </div>
-
-
-                    <div class="list-group hidden-sm hidden-xs">
-                        @foreach(\App\Category::all() as $category)
-                            <a href="{{url("/category/$category->id")}}" class="list-group-item">{{$category->name}}</a>
-                        @endforeach
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    @include('partials.flash')
-
                     @foreach($main_events as $main_event)
-                        <a href="{{route('main_event',['id'=>$main_event->id])}}">
-                            <div class="col-sm-12 col-xs-12 col-md-6">
-                                <div class="thumbnail">
-                                    <img src="{{$main_event->picture}}-/resize/335x188/" alt="...">
-                                    <div class="caption">
-                                        <p><Strong>Name: </Strong>{{$main_event->name}}</p>
-                                        <p><Strong>Organiser: </Strong>{{$main_event->organiser}}</p>
-                                        {{--<p><Strong>Address: </Strong>{{$event->address}}</p>--}}
-                                    </div>
+
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                            <div class="hovereffect">
+                                <img class="img-responsive" src="{{$main_event->picture}}" alt="">
+                                <div class="overlay">
+                                    <h2>{{$main_event->name}}  - {{$main_event->organiser}}</h2>
+                                    <a class="info" href="{{route('main_event',['id'=>$main_event->id])}}")}}">click hear to see all sub events</a>
                                 </div>
                             </div>
-                        </a>
+                        </div>
                     @endforeach
+
+                    <style type="text/css">
+                        .hovereffect {
+                            width: 100%;
+                            height: 100%;
+                            float: left;
+                            overflow: hidden;
+                            position: relative;
+                            text-align: center;
+                            cursor: default;
+                        }
+
+                        .hovereffect .overlay {
+                            width: 100%;
+                            height: 100%;
+                            position: absolute;
+                            overflow: hidden;
+                            top: 0;
+                            left: 0;
+                            background-color: rgba(75,75,75,0.7);
+                            -webkit-transition: all 0.4s ease-in-out;
+                            transition: all 0.4s ease-in-out;
+                        }
+
+                        .hovereffect:hover .overlay {
+                            background-color: rgba(48, 152, 157, 0.4);
+                        }
+
+                        .hovereffect img {
+                            display: block;
+                            position: relative;
+                        }
+
+                        .hovereffect h2 {
+                            text-transform: uppercase;
+                            color: #fff;
+                            text-align: center;
+                            position: relative;
+                            font-size: 17px;
+                            padding: 10px;
+                            background: rgba(0, 0, 0, 0.6);
+                            -webkit-transform: translateY(45px);
+                            -ms-transform: translateY(45px);
+                            transform: translateY(45px);
+                            -webkit-transition: all 0.4s ease-in-out;
+                            transition: all 0.4s ease-in-out;
+                        }
+
+                        .hovereffect:hover h2 {
+                            -webkit-transform: translateY(5px);
+                            -ms-transform: translateY(5px);
+                            transform: translateY(5px);
+                        }
+
+                        .hovereffect a.info {
+                            display: inline-block;
+                            text-decoration: none;
+                            padding: 7px 14px;
+                            text-transform: uppercase;
+                            color: #fff;
+                            border: 1px solid #fff;
+                            background-color: transparent;
+                            opacity: 0;
+                            filter: alpha(opacity=0);
+                            -webkit-transform: scale(0);
+                            -ms-transform: scale(0);
+                            transform: scale(0);
+                            -webkit-transition: all 0.4s ease-in-out;
+                            transition: all 0.4s ease-in-out;
+                            font-weight: normal;
+                            margin: -52px 0 0 0;
+                            padding: 62px 100px;
+                        }
+
+                        .hovereffect:hover a.info {
+                            opacity: 1;
+                            filter: alpha(opacity=100);
+                            -webkit-transform: scale(1);
+                            -ms-transform: scale(1);
+                            transform: scale(1);
+                        }
+
+                        .hovereffect a.info:hover {
+                            box-shadow: 0 0 5px #fff;
+                        }
+                    </style>
 
                     {{--<div class="col-md-12 col-sm-12 col-lg-12 col-xs-12">--}}
                         {{--<div class="col-md-offset-4 col-sm-offset-2 col-lg-offset-4 bottom">{{$events->links()}}</div>--}}
@@ -88,7 +142,6 @@
                     {{--</script>--}}
 
                 </div>
-            </div>
         </div>
     </div>
 @endsection

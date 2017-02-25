@@ -15,7 +15,10 @@ use App\Contact;
 use App\Event;
 use App\Mail\Confirmation;
 
-Route::get('/', 'EventController@index');
+Route::get('/', function(){
+    return view('root');
+});
+Route::get('/all', 'EventController@index');
 Route::get('/workshops', 'WorkshopController@index');
 Route::post('/search', 'EventController@search');
 
@@ -107,6 +110,16 @@ Route::group(['middleware' => 'admin'], function () {
     })->name('reply_message');
 
     Route::post('/admin/panel/message/reply/to','AdminController@sendReply');
+    Route::get('/admin/panel/categories','CategoriesController@create')->name('categories');
+    Route::post('/admin/panel/categories/store','CategoriesController@store');
+    Route::get('/admin/panel/categories/{id}/delete','CategoriesController@destroy')->name('delete_category');
+    Route::get('/admin/panel/categories/{id}/update','CategoriesController@update')->name('update_category');
+    Route::put('/admin/panel/categories/{id}/updateStore','CategoriesController@updateStore')->name('updateStore');
+
+
+
+
+
 
 
 });
