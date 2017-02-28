@@ -24,6 +24,9 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="row">
                     @include('partials.flash')
+                    @if(count($events) == 0)
+                        <h1>you haven't uploaded any competition yet please upload by click on upload competitions , thank you</h1>
+                    @endif
                 @foreach($events as $event)
 
 
