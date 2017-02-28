@@ -37,13 +37,18 @@
             <div class="col-md-8">
                 @include('partials.flash')
 
+                @if(count($events) == 0)
+                    <h1><i class="fa fa-frown-o" aria-hidden="true"></i></h1>
+                    <h2 class="bg bg-primary"> Sorry , There is no Competitions for this Category</h2>
+                @endif
+
 
     @foreach($events as $event)
         <a href="{{route('event',['id'=>$event->id])}}">
             <div class="col-sm-6 col-xs-12 col-md-4">
                 <div class="thumbnail">
                     <img src="{{$event->picture}}-/resize/335x188/" alt="...">
-                    <div class="caption bg-info">
+                    <div class="caption">
                         <p><Strong>Name: </Strong>{{$event->name}}</p>
                         <p><Strong>Organiser: </Strong>{{$event->organiser}}</p>
                         <p><Strong>Date: </Strong>{{$event->date}}</p>
