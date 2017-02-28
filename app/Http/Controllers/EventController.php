@@ -33,8 +33,7 @@ class EventController extends Controller
 //                'next_page' => $events->nextPageUrl()
 //            ];
 //        }
-            $status = 'result for '.$request->q.'.';
-            return view('welcome',compact('events','status'));
+            return view('welcome');
 
 
 
