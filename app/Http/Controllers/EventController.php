@@ -33,7 +33,7 @@ class EventController extends Controller
 //                'next_page' => $events->nextPageUrl()
 //            ];
 //        }
-            return view('welcome');
+            return view('welcome',compact('events'));
 
 
 
