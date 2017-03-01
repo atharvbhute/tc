@@ -22,10 +22,6 @@ Route::get('/', function(){
 Route::get('/all', 'EventController@index');
 Route::get('/workshops', 'WorkshopController@index');
 Route::post('/search', 'EventController@search');
-Route::get('/QrCodes', function (){
-    $mainEventQrs = Mainevent::where('user_id','=',Auth::id())->get();
-    return view('qrCodes',compact('mainEventQrs'));
-})->name('QrCode')->middleware('auth');
 
 Auth::routes();
 

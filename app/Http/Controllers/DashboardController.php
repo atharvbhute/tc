@@ -14,7 +14,8 @@ class DashboardController extends Controller
     public function events(){
         $user = User::findOrFail(Auth::id());
         $events = $user->events;
-        return view('dashboard',compact('events'));
+        $mainEventQrs = Mainevent::where('user_id','=',Auth::id())->get();
+        return view('dashboard',compact('events','mainEventQrs'));
     }
 
     public function entries($id){

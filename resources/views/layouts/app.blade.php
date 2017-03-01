@@ -151,12 +151,6 @@
 
                             <ul class="dropdown-menu" role="menu">
                                 <li>
-                                    <a href="{{ route('QrCode') }}">
-                                        Qr Codes
-                                    </a>
-                                </li>
-
-                                <li>
                                     <a href="{{ route('dash') }}">
                                         Dashboard
                                     </a>

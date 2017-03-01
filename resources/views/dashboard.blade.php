@@ -21,7 +21,7 @@
 
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-8">
                 <div class="row">
                     @include('partials.flash')
                     @if(count($events) == 0)
@@ -55,6 +55,35 @@
                     @endforeach
                 </div>
             </div>
+            <div class="col-md-4">
+                @foreach($mainEventQrs as $mainEventQr)
+                    <p class="bg-info"><strong>print this qr codes - "for online registration refer this".</strong></p>
+                    <div class="thumbnail" id="printDiv">
+                        <p class="bg-primary" style="text-align: center">thecompete.com</p>
+                        <p class="bg-info" style="text-align: center"><strong>{{$mainEventQr->name}}</strong></p>
+                        <div style="align-content: center">{!! QrCode::size(200)->generate(route('main_event',['id'=>$mainEventQr->id])) !!}</div>
+                        <p>scan me to register for an awesome competitions</p>
+                        <hr>
+                        <p>Note:if you are having any problem with above Qr code then please refer below url :</p>
+                        <p>{{route('main_event',['id'=>$mainEventQr->id])}}</p>
+                        <hr>
+                        <p style="text-align: center">thecompete © 2017</p>
+                    </div>
+
+                    <button onclick="printContent('printDiv')" class="btn btn-block btn-primary">print</button>
+                    <hr>
+
+                @endforeach
+            </div>
+            <script>
+                function printContent(el){
+                    var restorepage = document.body.innerHTML;
+                    var printcontent = document.getElementById(el).innerHTML;
+                    document.body.innerHTML = printcontent;
+                    window.print();
+                    document.body.innerHTML = restorepage;
+                }
+            </script>
 
         </div>
     </div>
