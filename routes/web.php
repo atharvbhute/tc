@@ -56,7 +56,7 @@ Route::get('/main_event/{id}',function ($id){
 
 Route::get('/{id}/event','EventController@show')->name('event');
 Route::get('/hot_event',function(){
-    $events = Event::where('verified','=',1)->where('hot','=',1)->paginate(6);
+    $events = Event::where('verified','=',1)->where('hot','=',1)->letest()->paginate(6);
     return view('welcome')->with('events',$events);
 });
 
