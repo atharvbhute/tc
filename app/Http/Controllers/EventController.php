@@ -101,6 +101,19 @@ class EventController extends Controller
 
     }
 
+    public function mainEventVerified(){
+        $main_events = [];
+        $main_events_ids = Mainevent::all()->pluck('id');
+        foreach ($main_events_ids as $main_events_id){
+            $event = Event::where('mainevent_id','=',$main_events_id)->where('verified','=',1)->get();
+            if (count($event) ==! 0){
+                $main_event = Mainevent::find($main_events_id);
+                $main_events[] = $main_event;
+            }
+        }
+        return view('main_events')->with('main_events',$main_events);
+    }
+
     /**
      * Display the specified resource.
      *

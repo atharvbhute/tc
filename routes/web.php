@@ -37,10 +37,7 @@ Route::post('/store/-/competitions','EventController@store');
 Route::post('/store/workshop','WorkshopController@store');
 Route::get('/category/{id}','CategoriesController@index');
 
-Route::get('/main_events',function(){
-    $main_events = App\Mainevent::all();
-    return view('main_events')->with('main_events',$main_events);
-});
+Route::get('/main_events','EventController@mainEventVerified');
 
 Route::get('/main_event/{id}',function ($id){
     $main_event = App\Mainevent::find($id);
