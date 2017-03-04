@@ -421,7 +421,7 @@
                                                             <table border="0" cellspacing="0" cellpadding="0">
                                                                 <tr>
                                                                     <td>
-                                                                        <a href='{{url("register/confirm/{$user->token}")}}' class="button button--green" target="_blank">Click me and confirm your email</a>
+                                                                        <a href='{{url("/login")}}' class="button button--green" target="_blank">Click me and confirm your email and login</a>
                                                                     </td>
                                                                 </tr>
                                                                 <br>
