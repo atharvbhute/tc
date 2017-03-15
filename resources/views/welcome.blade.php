@@ -46,7 +46,7 @@
     @foreach($events as $event)
         <a href="{{route('event',['id'=>$event->id])}}">
             <div class="col-sm-6 col-xs-12 col-md-4">
-                <div class="thumbnail">
+                <div class="thumbnail" style="background-color: white">
                     <img src="{{$event->picture}}-/resize/335x188/" alt="...">
                     <div class="caption">
                         <p><Strong>Name: </Strong>{{$event->name}}</p>

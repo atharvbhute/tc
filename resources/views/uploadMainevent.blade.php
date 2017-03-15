@@ -30,7 +30,7 @@
                             <tr>
                                 <td>{{$existedEvent->name}}</td>
                                 <td>{{$existedEvent->organiser}}</td>
-                                <td><a href="{{route('mainEventId',['mainEventId'=>$existedEvent->id])}}" class="btn btn-info">add</a></td>
+                                <td><a href="{{route('mainEventId',['mainEventId'=>$existedEvent->id])}}" class="btn btn-primary">add</a></td>
                             </tr>
 
                         @endforeach
