@@ -11,7 +11,7 @@
     <title>@yield('title')</title>
 
     <!-- Styles -->
-    <link href="/css/app.css" rel="stylesheet">
+
 
     <!-- Latest compiled and minified CSS -->
     <link href="https://fortawesome.github.io/Font-Awesome/assets/font-awesome/css/font-awesome.css" rel="stylesheet">
@@ -20,6 +20,7 @@
     <!-- Optional theme -->
     {{--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">--}}
 
+    <link href="/css/app.css" rel="stylesheet">
     <script src='http://connect.facebook.net/en_US/all.js'></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js" type="text/javascript"></script>

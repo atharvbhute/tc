@@ -5,14 +5,33 @@
 @section('content')
 
     <div class="container">
+
         <div class="row">
+            {{--<div class="col-lg-12" style="text-align: center; background-image: url('')">--}}
+                {{--<div class="intro-message">--}}
+                    {{--<h1>Landing Page</h1>--}}
+                    {{--<h3>A Template by Start Bootstrap</h3>--}}
+                    {{--<hr class="intro-divider">--}}
+                    {{--<ul class="list-inline intro-social-buttons">--}}
+                        {{--<li>--}}
+                            {{--<a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="https://github.com/IronSummitMedia/startbootstrap" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>--}}
+                        {{--</li>--}}
+                        {{--<li>--}}
+                            {{--<a href="#" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linkedin</span></a>--}}
+                        {{--</li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
+            {{--</div>--}}
             <div class="col-md-12">
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                     <div class="hovereffect">
                         <img class="img-responsive" src="https://ucarecdn.com/3e99dfa9-d074-49d5-a7be-89e668947797/-/crop/2307x1296/131,0/-/preview/" alt="">
                         <div class="overlay">
                             <h2>HOT</h2>
-                            <a class="info" href="{{url("/hot_event")}}"><strong>click hear to see</strong></a>
+                            <a class="info" href="{{url("/hot_event")}}"><strong>click here to see</strong></a>
                         </div>
                     </div>
                 </div>
@@ -22,7 +41,7 @@
                         <img class="img-responsive" src="https://ucarecdn.com/b093ea07-9695-4778-881b-9c3d91d1214d/EVENTS.png" alt="">
                         <div class="overlay">
                             <h2>Main Events</h2>
-                            <a class="info" href="{{url("/main_events")}}"><strong>click hear to see</strong></a>
+                            <a class="info" href="{{url("/main_events")}}"><strong>click here to see</strong></a>
                         </div>
                     </div>
                 </div>
@@ -34,7 +53,7 @@
                         <img class="img-responsive" src="https://ucarecdn.com/dd91a833-953f-4f64-a968-e0583aadcaec/-/crop/732x412/47,0/-/preview/" alt="">
                         <div class="overlay">
                             <h2>All</h2>
-                            <a class="info" href="{{url("/all")}}"><strong>click hear to see</strong></a>
+                            <a class="info" href="{{url("/all")}}"><strong>click here to see</strong></a>
                         </div>
                     </div>
                 </div>
@@ -44,7 +63,7 @@
                             <img class="img-responsive" src="{{$category->image}}" alt="">
                             <div class="overlay">
                                 <h2>{{$category->name}}</h2>
-                                <a class="info" href="{{url("/category/$category->id")}}"><strong>click hear to see</strong></a>
+                                <a class="info" href="{{url("/category/$category->id")}}"><strong>click here to see</strong></a>
                             </div>
                         </div>
                     </div>
